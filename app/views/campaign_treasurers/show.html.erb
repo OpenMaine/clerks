@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @campaign_treasurer %>
+
+<div>
+  <%= link_to "Edit this campaign treasurer", edit_campaign_treasurer_path(@campaign_treasurer) %> |
+  <%= link_to "Back to campaign treasurers", campaign_treasurers_path %>
+
+  <%= button_to "Destroy this campaign treasurer", @campaign_treasurer, method: :delete %>
+</div>

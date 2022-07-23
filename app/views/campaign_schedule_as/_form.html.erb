@@ -1,0 +1,77 @@
+<%= form_with(model: campaign_schedule_a) do |form| %>
+  <% if campaign_schedule_a.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(campaign_schedule_a.errors.count, "error") %> prohibited this campaign_schedule_a from being saved:</h2>
+
+      <ul>
+        <% campaign_schedule_a.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :campaign_id, style: "display: block" %>
+    <%= form.text_field :campaign_id %>
+  </div>
+
+  <div>
+    <%= form.label :date, style: "display: block" %>
+    <%= form.date_field :date %>
+  </div>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :address, style: "display: block" %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div>
+    <%= form.label :city, style: "display: block" %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div>
+    <%= form.label :state, style: "display: block" %>
+    <%= form.text_field :state %>
+  </div>
+
+  <div>
+    <%= form.label :zip, style: "display: block" %>
+    <%= form.text_field :zip %>
+  </div>
+
+  <div>
+    <%= form.label :occupation, style: "display: block" %>
+    <%= form.text_field :occupation %>
+  </div>
+
+  <div>
+    <%= form.label :employer, style: "display: block" %>
+    <%= form.text_field :employer %>
+  </div>
+
+  <div>
+    <%= form.label :type, style: "display: block" %>
+    <%= form.number_field :type %>
+  </div>
+
+  <div>
+    <%= form.label :amount, style: "display: block" %>
+    <%= form.number_field :amount %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

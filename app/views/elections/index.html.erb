@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Elections</h1>
+
+<div id="elections">
+  <% @elections.each do |election| %>
+    <%= render election %>
+    <p>
+      <%= link_to "Show this election", election %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New election", new_election_path %>

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Campaign reports</h1>
+
+<div id="campaign_reports">
+  <% @campaign_reports.each do |campaign_report| %>
+    <%= render campaign_report %>
+    <p>
+      <%= link_to "Show this campaign report", campaign_report %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New campaign report", new_campaign_report_path %>

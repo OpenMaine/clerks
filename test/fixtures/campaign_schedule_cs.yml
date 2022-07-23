@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  campaign: one
+  lender: MyText
+  balance_at_beginning: 1
+  amount_loaned: 1
+  amount_repaid: 1
+  amount_forgiven: 1
+  balance: 1
+
+two:
+  campaign: two
+  lender: MyText
+  balance_at_beginning: 1
+  amount_loaned: 1
+  amount_repaid: 1
+  amount_forgiven: 1
+  balance: 1
