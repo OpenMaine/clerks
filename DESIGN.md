@@ -2,6 +2,11 @@
 These are some thoughts and drafts about how the data modeling will work. This
 is subject to change and this doc may get out of date.
 
+Ultimately what we are tracking is election cycle campaign finance reports. 
+This can be related to committees or candidates. Committees and candidates can
+potentially reappear each year (and we should do our best to link them) but
+we are focused on capturing each year's reports. Elections are the capsule.
+
 ## Candidates and Committees
 Candidates and Committees share a lot of similarities but there are good reasons
 to keep them separate. There is a natural distinction when we are displaying
