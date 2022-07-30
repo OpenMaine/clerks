@@ -1,0 +1,5 @@
+<%= form_with url: "/campaigns", method: :post do |form| %>
+  <%= form.label :spreadsheet, "Upload a campaign finance report" %><br />
+  <%= form.file_field :spreadsheet, accept: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" %><br />
+  <%= form.submit "Submit" %>
+<% end %>
