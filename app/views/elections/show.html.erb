@@ -1,10 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @election %>
-
 <div>
-  <%= link_to "Edit this election", edit_election_path(@election) %> |
-  <%= link_to "Back to elections", elections_path %>
-
-  <%= button_to "Destroy this election", @election, method: :delete %>
+  <p>Campaigns</p>
+  <ul>
+    <% @election.campaigns.each do |campaign| %>
+      <li><%= link_to campaign.name, campaign %></li>
+    <% end %>
+  </ul>
+</div>
+<div>
+  <%= link_to "Add campaign", new_campaign_path %>
 </div>

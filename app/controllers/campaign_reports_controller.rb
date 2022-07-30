@@ -1,3 +1,5 @@
+require 'roo'
+
 class CampaignReportsController < ApplicationController
   before_action :set_campaign_report, only: %i[ show edit update destroy ]
 
@@ -21,17 +23,13 @@ class CampaignReportsController < ApplicationController
 
   # POST /campaign_reports or /campaign_reports.json
   def create
-    @campaign_report = CampaignReport.new(campaign_report_params)
-
-    respond_to do |format|
-      if @campaign_report.save
-        format.html { redirect_to campaign_report_url(@campaign_report), notice: "Campaign report was successfully created." }
-        format.json { render :show, status: :created, location: @campaign_report }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @campaign_report.errors, status: :unprocessable_entity }
-      end
-    end
+    spreadsheet = params[:spreadsheet]
+    ss = Roo::Spreadsheet.open(params[:spreadsheet], extension: :xlsx)
+    campaign = Campaign.find(params[:campaign_id])
+    report = campaign.campaign_reports.build
+    report.report_type = ss.sheet(0).row(2)[7]
+    report.save
+    redirect_to [campaign, report]
   end
 
   # PATCH/PUT /campaign_reports/1 or /campaign_reports/1.json
@@ -49,10 +47,11 @@ class CampaignReportsController < ApplicationController
 
   # DELETE /campaign_reports/1 or /campaign_reports/1.json
   def destroy
+    campaign = @campaign_report.campaign
     @campaign_report.destroy
 
     respond_to do |format|
-      format.html { redirect_to campaign_reports_url, notice: "Campaign report was successfully destroyed." }
+      format.html { redirect_to campaign, notice: "Campaign report was successfully destroyed." }
       format.json { head :no_content }
     end
   end

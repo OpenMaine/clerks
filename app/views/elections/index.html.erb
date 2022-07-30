@@ -1,12 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Elections</h1>
+<h2>Elections</h2>
 
 <div id="elections">
   <% @elections.each do |election| %>
-    <%= render election %>
     <p>
-      <%= link_to "Show this election", election %>
+      <h3><%= link_to election.title, election %></h3>
     </p>
   <% end %>
 </div>

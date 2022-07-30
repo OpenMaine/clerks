@@ -7,11 +7,11 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
+    <h1><%= link_to "Clerks", root_path %></h1>
     <%= yield %>
   </body>
 </html>

@@ -13,7 +13,7 @@
 
   <div>
     <%= form.label :election_id, style: "display: block" %>
-    <%= form.text_field :election_id %>
+    <%= form.collection_select :election_id, Election.order(:title), :id, :title %>
   </div>
 
   <div>
@@ -43,7 +43,7 @@
 
   <div>
     <%= form.label :office, style: "display: block" %>
-    <%= form.number_field :office %>
+    <%= form.select :office, Campaign.offices.map { |val| [val[0], val[0]] } %>
   </div>
 
   <div>
