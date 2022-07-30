@@ -1,0 +1,2 @@
+module CampaignScheduleBsHelper
+end

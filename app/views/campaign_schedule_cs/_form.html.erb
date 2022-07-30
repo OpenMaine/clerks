@@ -1,0 +1,52 @@
+<%= form_with(model: campaign_schedule_c) do |form| %>
+  <% if campaign_schedule_c.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(campaign_schedule_c.errors.count, "error") %> prohibited this campaign_schedule_c from being saved:</h2>
+
+      <ul>
+        <% campaign_schedule_c.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :campaign_id, style: "display: block" %>
+    <%= form.text_field :campaign_id %>
+  </div>
+
+  <div>
+    <%= form.label :lender, style: "display: block" %>
+    <%= form.text_area :lender %>
+  </div>
+
+  <div>
+    <%= form.label :balance_at_beginning, style: "display: block" %>
+    <%= form.number_field :balance_at_beginning %>
+  </div>
+
+  <div>
+    <%= form.label :amount_loaned, style: "display: block" %>
+    <%= form.number_field :amount_loaned %>
+  </div>
+
+  <div>
+    <%= form.label :amount_repaid, style: "display: block" %>
+    <%= form.number_field :amount_repaid %>
+  </div>
+
+  <div>
+    <%= form.label :amount_forgiven, style: "display: block" %>
+    <%= form.number_field :amount_forgiven %>
+  </div>
+
+  <div>
+    <%= form.label :balance, style: "display: block" %>
+    <%= form.number_field :balance %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<%= form_with(model: [campaign, campaign_report]) do |form| %>
+  <% if campaign_report.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(campaign_report.errors.count, "error") %> prohibited this campaign_report from being saved:</h2>
+
+      <ul>
+        <% campaign_report.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <strong>Campaign: </strong>
+    <span><%= campaign.name %></span>
+  </div>
+
+  <div>
+    <%= form.label :type, style: "display: block" %>
+    <%= form.number_field :type %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

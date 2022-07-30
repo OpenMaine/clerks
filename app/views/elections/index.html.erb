@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<h2>Elections</h2>
+
+<div id="elections">
+  <% @elections.each do |election| %>
+    <p>
+      <h3><%= link_to election.title, election %></h3>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New election", new_election_path %>

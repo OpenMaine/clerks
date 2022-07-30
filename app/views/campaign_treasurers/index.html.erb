@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Campaign treasurers</h1>
+
+<div id="campaign_treasurers">
+  <% @campaign_treasurers.each do |campaign_treasurer| %>
+    <%= render campaign_treasurer %>
+    <p>
+      <%= link_to "Show this campaign treasurer", campaign_treasurer %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New campaign treasurer", new_campaign_treasurer_path %>

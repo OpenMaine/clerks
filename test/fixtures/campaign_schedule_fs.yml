@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  campaign: one
+  receipts: 1
+  payments: 1
+  balance: 1
+
+two:
+  campaign: two
+  receipts: 1
+  payments: 1
+  balance: 1

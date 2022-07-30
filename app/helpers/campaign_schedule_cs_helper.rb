@@ -1,0 +1,2 @@
+module CampaignScheduleCsHelper
+end

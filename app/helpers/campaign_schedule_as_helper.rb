@@ -1,0 +1,2 @@
+module CampaignScheduleAsHelper
+end

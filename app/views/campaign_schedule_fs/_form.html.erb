@@ -1,0 +1,37 @@
+<%= form_with(model: campaign_schedule_f) do |form| %>
+  <% if campaign_schedule_f.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(campaign_schedule_f.errors.count, "error") %> prohibited this campaign_schedule_f from being saved:</h2>
+
+      <ul>
+        <% campaign_schedule_f.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :campaign_id, style: "display: block" %>
+    <%= form.text_field :campaign_id %>
+  </div>
+
+  <div>
+    <%= form.label :receipts, style: "display: block" %>
+    <%= form.number_field :receipts %>
+  </div>
+
+  <div>
+    <%= form.label :payments, style: "display: block" %>
+    <%= form.number_field :payments %>
+  </div>
+
+  <div>
+    <%= form.label :balance, style: "display: block" %>
+    <%= form.number_field :balance %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

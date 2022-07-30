@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @campaign_schedule_a %>
+
+<div>
+  <%= link_to "Edit this campaign schedule a", edit_campaign_schedule_a_path(@campaign_schedule_a) %> |
+  <%= link_to "Back to campaign schedule as", campaign_schedule_as_path %>
+
+  <%= button_to "Destroy this campaign schedule a", @campaign_schedule_a, method: :delete %>
+</div>

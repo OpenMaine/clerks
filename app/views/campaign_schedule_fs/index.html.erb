@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Campaign schedule fs</h1>
+
+<div id="campaign_schedule_fs">
+  <% @campaign_schedule_fs.each do |campaign_schedule_f| %>
+    <%= render campaign_schedule_f %>
+    <p>
+      <%= link_to "Show this campaign schedule f", campaign_schedule_f %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New campaign schedule f", new_campaign_schedule_f_path %>
