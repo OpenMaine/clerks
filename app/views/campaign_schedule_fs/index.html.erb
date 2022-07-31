@@ -3,7 +3,8 @@
 <h1>Campaign schedule F</h1>
 
 <div id="campaign_schedule_fs">
-  <%= render @campaign_schedule_f %>
+  <%# this should never be null, but just in case %>
+  <%= render @campaign_schedule_f if @campaign_schedule_f %>
 </div>
 
 <%= link_to "Back to campaign report", campaign_campaign_report_path(id: @campaign_report) %>
