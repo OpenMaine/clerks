@@ -1,10 +1,5 @@
 <div id="<%= dom_id campaign_schedule_a %>">
   <p>
-    <strong>Campaign:</strong>
-    <%= campaign_schedule_a.campaign_id %>
-  </p>
-
-  <p>
     <strong>Date:</strong>
     <%= campaign_schedule_a.date %>
   </p>
@@ -46,17 +41,18 @@
 
   <p>
     <strong>Type:</strong>
-    <%= campaign_schedule_a.type %>
+    <%= campaign_schedule_a.schedule_a_type %>
   </p>
 
   <p>
     <strong>Amount:</strong>
-    <%= campaign_schedule_a.amount %>
+    <%= format_money(campaign_schedule_a.amount) %>
   </p>
 
   <p>
     <strong>Description:</strong>
     <%= campaign_schedule_a.description %>
   </p>
+  <hr />
 
 </div>

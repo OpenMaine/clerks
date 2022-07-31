@@ -1,7 +1,7 @@
 class CreateCampaignScheduleAs < ActiveRecord::Migration[7.0]
   def change
     create_table :campaign_schedule_as do |t|
-      t.references :campaign, null: false, foreign_key: true
+      t.references :campaign_report, null: false, foreign_key: true
       t.date :date
       t.string :name
       t.string :address
@@ -10,7 +10,7 @@ class CreateCampaignScheduleAs < ActiveRecord::Migration[7.0]
       t.string :zip
       t.string :occupation
       t.string :employer
-      t.integer :type
+      t.integer :schedule_a_type
       t.integer :amount
       t.text :description
 
