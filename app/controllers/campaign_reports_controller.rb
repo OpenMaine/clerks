@@ -138,6 +138,11 @@ class CampaignReportsController < ApplicationController
   # DELETE /campaign_reports/1 or /campaign_reports/1.json
   def destroy
     campaign = @campaign_report.campaign
+    CampaignScheduleA.where(campaign_report_id: @campaign_report.id).destroy_all
+    CampaignScheduleB.where(campaign_report_id: @campaign_report.id).destroy_all
+    CampaignScheduleC.where(campaign_report_id: @campaign_report.id).destroy_all
+    CampaignScheduleD.where(campaign_report_id: @campaign_report.id).destroy_all
+    CampaignScheduleF.where(campaign_report_id: @campaign_report.id).destroy_all
     @campaign_report.destroy
 
     respond_to do |format|
