@@ -1,3 +1,3 @@
 class CampaignScheduleC < ApplicationRecord
-  belongs_to :campaign
+  belongs_to :campaign_report
 end

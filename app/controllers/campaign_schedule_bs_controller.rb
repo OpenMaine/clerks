@@ -1,9 +1,10 @@
 class CampaignScheduleBsController < ApplicationController
+  include CampaignReportSchedule
   before_action :set_campaign_schedule_b, only: %i[ show edit update destroy ]
 
   # GET /campaign_schedule_bs or /campaign_schedule_bs.json
   def index
-    @campaign_schedule_bs = CampaignScheduleB.all
+    @campaign_schedule_bs = @campaign_report.campaign_schedule_bs
   end
 
   # GET /campaign_schedule_bs/1 or /campaign_schedule_bs/1.json

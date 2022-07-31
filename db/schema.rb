@@ -20,7 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_23_224927) do
   end
 
   create_table "campaign_schedule_as", force: :cascade do |t|
-    t.integer "campaign_id", null: false
+    t.integer "campaign_report_id", null: false
     t.date "date"
     t.string "name"
     t.string "address"
@@ -29,28 +29,28 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_23_224927) do
     t.string "zip"
     t.string "occupation"
     t.string "employer"
-    t.integer "type"
+    t.integer "schedule_a_type"
     t.integer "amount"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["campaign_id"], name: "index_campaign_schedule_as_on_campaign_id"
+    t.index ["campaign_report_id"], name: "index_campaign_schedule_as_on_campaign_report_id"
   end
 
   create_table "campaign_schedule_bs", force: :cascade do |t|
-    t.integer "campaign_id", null: false
+    t.integer "campaign_report_id", null: false
     t.date "date"
     t.string "payee"
-    t.integer "type"
+    t.integer "schedule_b_type"
     t.string "description"
     t.integer "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["campaign_id"], name: "index_campaign_schedule_bs_on_campaign_id"
+    t.index ["campaign_report_id"], name: "index_campaign_schedule_bs_on_campaign_report_id"
   end
 
   create_table "campaign_schedule_cs", force: :cascade do |t|
-    t.integer "campaign_id", null: false
+    t.integer "campaign_report_id", null: false
     t.text "lender"
     t.integer "balance_at_beginning"
     t.integer "amount_loaned"
@@ -59,7 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_23_224927) do
     t.integer "balance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["campaign_id"], name: "index_campaign_schedule_cs_on_campaign_id"
+    t.index ["campaign_report_id"], name: "index_campaign_schedule_cs_on_campaign_report_id"
   end
 
   create_table "campaign_schedule_ds", force: :cascade do |t|
@@ -67,20 +67,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_23_224927) do
     t.text "creditor"
     t.text "purpose"
     t.integer "amount"
-    t.integer "campaign_id", null: false
+    t.integer "campaign_report_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["campaign_id"], name: "index_campaign_schedule_ds_on_campaign_id"
+    t.index ["campaign_report_id"], name: "index_campaign_schedule_ds_on_campaign_report_id"
   end
 
   create_table "campaign_schedule_fs", force: :cascade do |t|
-    t.integer "campaign_id", null: false
+    t.integer "campaign_report_id", null: false
     t.integer "receipts"
     t.integer "payments"
     t.integer "balance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["campaign_id"], name: "index_campaign_schedule_fs_on_campaign_id"
+    t.index ["campaign_report_id"], name: "index_campaign_schedule_fs_on_campaign_report_id"
   end
 
   create_table "campaign_treasurers", force: :cascade do |t|
@@ -115,11 +115,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_23_224927) do
   end
 
   add_foreign_key "campaign_reports", "campaigns"
-  add_foreign_key "campaign_schedule_as", "campaigns"
-  add_foreign_key "campaign_schedule_bs", "campaigns"
-  add_foreign_key "campaign_schedule_cs", "campaigns"
-  add_foreign_key "campaign_schedule_ds", "campaigns"
-  add_foreign_key "campaign_schedule_fs", "campaigns"
+  add_foreign_key "campaign_schedule_as", "campaign_reports"
+  add_foreign_key "campaign_schedule_bs", "campaign_reports"
+  add_foreign_key "campaign_schedule_cs", "campaign_reports"
+  add_foreign_key "campaign_schedule_ds", "campaign_reports"
+  add_foreign_key "campaign_schedule_fs", "campaign_reports"
   add_foreign_key "campaign_treasurers", "campaigns"
   add_foreign_key "campaigns", "elections"
 end

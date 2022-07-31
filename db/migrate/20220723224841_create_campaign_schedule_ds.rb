@@ -5,7 +5,7 @@ class CreateCampaignScheduleDs < ActiveRecord::Migration[7.0]
       t.text :creditor
       t.text :purpose
       t.integer :amount
-      t.references :campaign, null: false, foreign_key: true
+      t.references :campaign_report, null: false, foreign_key: true
 
       t.timestamps
     end

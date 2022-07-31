@@ -1,9 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @campaign_report %>
+<%= link_to "Schedule A", campaign_campaign_report_campaign_schedule_as_path(campaign_report_id: @campaign_report.id) %>
+<%= link_to "Schedule B", campaign_campaign_report_campaign_schedule_bs_path(campaign_report_id: @campaign_report.id) %>
+<%= link_to "Schedule C", campaign_campaign_report_campaign_schedule_cs_path(campaign_report_id: @campaign_report.id) %>
+<%= link_to "Schedule D", campaign_campaign_report_campaign_schedule_ds_path(campaign_report_id: @campaign_report.id) %>
+<%= link_to "Schedule F", campaign_campaign_report_campaign_schedule_fs_path(campaign_report_id: @campaign_report.id) %>
 
 <div>
-
+  <br />
   <%= link_to "Back to campaign reports", campaign_path(@campaign_report.campaign) %>
   <%= button_to "Destroy this campaign report", [@campaign_report.campaign, @campaign_report], method: :delete %>
 </div>

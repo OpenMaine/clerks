@@ -1,22 +1,17 @@
 <div id="<%= dom_id campaign_schedule_f %>">
   <p>
-    <strong>Campaign:</strong>
-    <%= campaign_schedule_f.campaign_id %>
-  </p>
-
-  <p>
     <strong>Receipts:</strong>
-    <%= campaign_schedule_f.receipts %>
+    <%= format_money(campaign_schedule_f.receipts) %>
   </p>
 
   <p>
     <strong>Payments:</strong>
-    <%= campaign_schedule_f.payments %>
+    <%= format_money(campaign_schedule_f.payments) %>
   </p>
 
   <p>
     <strong>Balance:</strong>
-    <%= campaign_schedule_f.balance %>
+    <%= format_money(campaign_schedule_f.balance) %>
   </p>
 
 </div>

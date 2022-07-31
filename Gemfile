@@ -72,3 +72,5 @@ group :test do
 end
 
 gem "roo", "~> 2.9"
+
+gem "chronic", "~> 0.10.2"
