@@ -2,7 +2,7 @@
 
 <%= render @election %>
 <div>
-  <p>Campaigns</p>
+  <h3>Campaigns</h3>
   <ul>
     <% @election.campaigns.each do |campaign| %>
       <li><%= link_to campaign.name, campaign %></li>
