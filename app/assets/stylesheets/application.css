@@ -15,23 +15,41 @@
  */
 
 .header {
-	background-color: #002db3;
-	color: white;
+	background-color: white;
 	text-align: center;
+	display: inline;
 }
 
-.header a:link {
-	color: white;
+.head_img {
+	height: 60px;
+	vertical-align: middle;
+	margin-bottom: 7px;
+}
+
+.div_yield {
+	background-color: rgba(239, 239, 239, 1);
+}
+
+h1 {
+	vertical-align: middle;
+	color: #045D5D; 
+	text-decoration: none;
+	font-family: arial;
+	font-size: 2em;
+	font-weight: bold;
+}
+h1 a:link {
+	color: #045D5D; 
 	text-decoration: none;
 }
 
-.header a:visited {
-	color: white;
+h1 a:visited {
+	color: #045D5D; 
 	text-decoration: none;
 }
 
-.header a:hover {
-	color: white;
+h1 a:hover {
+	color: black;
 	text-decoration: underline;
 }
 
@@ -52,7 +70,7 @@ h3 {
 input[type=button], input[type=submit], input[type=reset] {
 	border: none;
 	padding: 5px 7px;
-	background-color: #e7e7e7;
+	background-color: #045D5D;
 	margin: 5px;
 }
 

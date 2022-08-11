@@ -11,7 +11,14 @@
   </head>
 
   <body>
-    <h1 class="header"><%= link_to "Clerks", root_path %></h1>
-    <%= yield %>
+    <div class="header">
+		<h1>
+			<img src=<%= asset_path("ballot_check.png") %> class="head_img"></img>
+			<%= link_to "ClerkApp", root_path %>
+		</h1>
+	</div>
+	<div class="div_yield">
+	    <%= yield %>
+	</div>
   </body>
 </html>
