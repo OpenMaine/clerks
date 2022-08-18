@@ -17,8 +17,14 @@
 			<%= link_to "ClerkApp", root_path %>
 		</h1>
 	</div>
-	<div class="div_yield">
-	    <%= yield %>
+	<div class="row">
+		<div class="leftnav">
+			<%= render "leftnav/leftnav" %>
+		</div>
+		<div class="div_yield">
+			<%= yield %>
+		</div>
 	</div>
+
   </body>
 </html>

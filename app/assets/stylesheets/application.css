@@ -27,10 +27,17 @@
 }
 
 .div_yield {
+	background-color: white;
+	display: block;
+	margin-left: 130px;
+}
+
+body {
 	background-color: rgba(239, 239, 239, 1);
 }
 
 h1 {
+	background-color: white;
 	vertical-align: middle;
 	color: #045D5D; 
 	text-decoration: none;
@@ -54,7 +61,6 @@ h1 a:hover {
 }
 
 h2 {
-	background-color: #99adff;
 	width: fit-content;
 	padding: 5px;
 	font-weight: normal;
@@ -92,4 +98,11 @@ input[type=text]:focus {
 label {
 	font-weight: bold;
 	font-size: 1.25em;
+}
+
+.leftnav {
+	width: 120px;
+	height: 120px;
+	display: block;
+	float: left;
 }

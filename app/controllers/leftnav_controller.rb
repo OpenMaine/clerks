@@ -1,0 +1,2 @@
+class LeftnavController < ApplicationController
+end

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
   resources :elections
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :leftnav
 
   # Defines the root path route ("/")
   root "elections#index"
