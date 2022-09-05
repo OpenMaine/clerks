@@ -57,6 +57,11 @@ class ElectionsController < ApplicationController
     end
   end
 
+  # POST /elections-bulk
+  def bulk_create
+    puts "very cool"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_election

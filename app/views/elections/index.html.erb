@@ -10,4 +10,12 @@
   <% end %>
 </div>
 
+<div>
+  <p>Bulk upload election data</p>
+  <%= form_with url: bulk_upload_url do |form| %>
+    <%= form.label :bulk_data, "Bulk Election Data" %>
+    <%= form.file_field :bulk_data, style: "display: block", accept: "application/zip" %>
+    <%= form.submit "Submit" %>
+  <% end %>
+</div>
 <%= link_to "New election", new_election_path %>
