@@ -1,3 +1,5 @@
+require 'zip'
+
 class ElectionsController < ApplicationController
   before_action :set_election, only: %i[ show edit update destroy ]
 
@@ -59,7 +61,12 @@ class ElectionsController < ApplicationController
 
   # POST /elections-bulk
   def bulk_create
-    puts "very cool"
+    Zip::File.open(params[:bulk_data]) do |zip_file|
+      zip_file.each do |entry|
+        puts "Extracting  #{entry.name}"
+      end
+    end
+    redirect_to :root
   end
 
   private

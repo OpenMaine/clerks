@@ -231,6 +231,7 @@ DEPENDENCIES
   rails (~> 7.0.3, >= 7.0.3.1)
   redis (~> 4.0)
   roo (~> 2.9)
+  rubyzip (~> 2.3.2)
   selenium-webdriver
   sprockets-rails
   sqlite3 (~> 1.4)
