@@ -122,8 +122,10 @@ thead {
     border: none;
 }
 
-.campaign-list-card {
-    border: 3px solid rgba(211, 211, 211, 0.4);
-    border-radius: 8px;
-    margin-bottom: 10px;
+.table > tbody > tr > th {
+    padding: 18px;
+}
+
+.table > tbody > tr > td {
+    border: none;
 }

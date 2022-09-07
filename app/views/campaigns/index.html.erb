@@ -23,7 +23,7 @@
 
     <tbody>
       <% @campaigns.each do |campaign| %>
-          <tr class="campaign-list-card">
+          <tr>
             <th scope="row"><%= link_to campaign.name, campaign %></th>
             <th><%= campaign.office %></th>
             <th><%= campaign.city %></th>
