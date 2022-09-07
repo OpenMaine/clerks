@@ -12,6 +12,12 @@ body {
     font: 'Nunito';
 }
 
+.container {
+    margin: 0px;
+    padding: 0px 20px 20px 20px;
+    width: 100%;
+}
+
 a {
     color: #007C8A;
 }
@@ -58,4 +64,66 @@ a {
 
 #sidebar ul li a:hover {
     color: #7386D5;
+}
+
+.navbar {
+    padding: 20px;
+    margin: 0px;
+}
+
+.breadcrumb {
+    background-color: #fff;
+    padding: 0px;
+}
+
+.breadcrumb >.breadcrumb-item {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 33px;
+
+    color: #007C8A;
+}
+
+.campaign-card > .card-body > *{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+th > a {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+    text-decoration-line: underline;
+
+    color: #0645AD;
+}
+
+tbody {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 33px;
+
+    color: #000000;
+}
+
+thead {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+
+    color: #4A4A4A;
+}
+
+.table > thead > tr > th {
+    border: none;
+}
+
+.campaign-list-card {
+    border: 3px solid rgba(211, 211, 211, 0.4);
+    border-radius: 8px;
+    margin-bottom: 10px;
 }

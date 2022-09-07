@@ -1,14 +1,41 @@
 <p style="color: green"><%= notice %></p>
+<div class="container">
 
-<h1>Campaigns</h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Campaigns</li>
+      </ol>
+    </nav>
 
-<div id="campaigns">
-  <% @campaigns.each do |campaign| %>
-    <%= render campaign %>
-    <p>
-      <%= link_to "Show this campaign", campaign %>
-    </p>
-  <% end %>
+  <hr>
+
+  <table id="campaigns" class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Office</th>
+        <th scope="col">Location</th>
+        <th scope="col">Election</th>
+        <th scope="col">Compliant</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @campaigns.each do |campaign| %>
+          <tr class="campaign-list-card">
+            <th scope="row"><%= link_to campaign.name, campaign %></th>
+            <th><%= campaign.office %></th>
+            <th><%= campaign.city %></th>
+            <th><%= campaign.election.title %></th>
+              
+            <th><%# campaign compliant %></th>
+            <th><%# campaign status %></th>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to "New campaign", new_campaign_path %>
+
 </div>
-
-<%= link_to "New campaign", new_campaign_path %>
