@@ -12,120 +12,14 @@ body {
     font: 'Nunito';
 }
 
-.container {
-    margin: 0px;
-    padding: 0px 20px 20px 20px;
-    width: 100%;
-}
-
 a {
     color: #007C8A;
 }
 
-.wrapper {
-    display: flex;
-    width: 100%;
-    align-items: stretch;
-}
-
-#sidebar {
-    min-width: 295px;
-    max-width: 295px;
-    min-height: 100vh;
-    background: rgba(216, 216, 216, 0.4);
-    transition: all 0.3s;
-}
-
-.sidebar-header {
-    padding: 20px 46px 20px 46px;
-
-    font-weight: 700;
-    font-size: 32px;
-
-    color: #007C8A;
-}
-
-#sidebar ul.components {
-    padding: 20px 0;
-    border-bottom: 1px solid #47748b;
-}
-
-#sidebar ul {
-    list-style: none;
-    color: #fff;
-    padding: 20px 46px 20px 46px;
-}
-
-#sidebar ul li a {
-    padding: 10px;
-    font-size: 30px;
-    display: block;
-}
-
-#sidebar ul li a:hover {
-    color: #7386D5;
-}
-
-.navbar {
-    padding: 20px;
-    margin: 0px;
-}
-
-.breadcrumb {
-    background-color: #fff;
-    padding: 0px;
-}
-
-.breadcrumb >.breadcrumb-item {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 33px;
-
-    color: #007C8A;
-}
-
-.campaign-card > .card-body > *{
-    display: inline-block;
-    vertical-align: middle;
-}
-
-th > a {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 33px;
-    text-decoration-line: underline;
-
-    color: #0645AD;
-}
-
-tbody {
-    font-style: normal;
+.nav-item{
     font-weight: 500;
     font-size: 24px;
     line-height: 33px;
 
     color: #000000;
-}
-
-thead {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 33px;
-
-    color: #4A4A4A;
-}
-
-.table > thead > tr > th {
-    border: none;
-}
-
-.table > tbody > tr > th {
-    padding: 18px;
-}
-
-.table > tbody > tr > td {
-    border: none;
 }
