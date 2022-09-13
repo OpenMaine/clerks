@@ -9,21 +9,69 @@ Do not use *= require in Sass or your other stylesheets will not be able to acce
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
-    font: 'Nunito';
+    font-family: 'Nunito';
+    background: #F2F2F2;
 }
 
 div.container {
     display: flex;
 }
 
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
 a {
     color: #007C8A;
 }
 
-.nav-item{
+.nav-item {
     font-weight: 500;
     font-size: 24px;
     line-height: 33px;
 
     color: #000000;
+}
+
+.navbar-custom {
+    padding: 25px;
+    background: white;
+}
+
+.searchbar-custom {
+    background-color: rgba(216, 216, 216, 0.4);
+    border-left: none;
+    height: 100%;
+    font-size: large;
+    border-radius: 8px;
+}
+
+.searchbar-icon-custom {
+    background-color: rgba(216, 216, 216, 0.4);
+    border-right: none;
+    height: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    span > svg {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.input-group-home-custom {
+    margin: 20px 0px 25px 0px;
+    height: 75px;
+}
+
+.dropdown-custom {
+    height: 50px;
+    min-width: 150px;
+    background-color: rgba(216, 216, 216, 0.4);
+}
+
+.input-group-dropdown-custom {
+    width: 75px;
 }

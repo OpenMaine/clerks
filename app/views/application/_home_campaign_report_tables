@@ -1,0 +1,30 @@
+<div class="row" id="home-tables">
+    <div class="col-sm-6">
+        <div class="card home-card">
+            <div class="card-body">
+                <h4 class="card-title">
+                    Top Spenders
+                </h4>
+                <ol>
+                    <li>
+                        list of top spenders
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card home-card">
+            <div class="card-body">
+                <h4 class="card-title">
+                    Top Contributors
+                </h4>
+                <ol>
+                    <li>
+                        list of top contributors
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
