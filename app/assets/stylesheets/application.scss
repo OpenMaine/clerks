@@ -9,7 +9,7 @@ Do not use *= require in Sass or your other stylesheets will not be able to acce
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
-    font-family: 'Nunito';
+    font: 'Nunito';
     background: #F2F2F2;
 }
 
@@ -73,5 +73,23 @@ a {
 }
 
 .input-group-dropdown-custom {
-    width: 75px;
+    width: auto;
+    min-width: 75px;
+}
+
+.tables {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.table {
+    width: 45%;
+    min-width: 300px;
+}
+
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
