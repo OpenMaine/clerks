@@ -127,3 +127,32 @@ a {
     font-size: x-large;
     margin-top: 25px;
 }
+
+.candidate-header {
+    padding: 25px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 33px;
+
+    color: #9B9B9B;
+}
+
+.candidate-name-header {
+    margin: 0;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34.56px;
+    line-height: 47px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+.campaigns-wrapper {
+    padding: 25px;
+}
+
+#campaigns {
+    font-size: 24px;
+}

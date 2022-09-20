@@ -41,13 +41,15 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 # Use Sass to process CSS
-gem "sass-rails"
+gem 'sassc-rails', '>= 2.1.0'
 
 # added boostrap for component styling
 gem 'bootstrap-sass', '~> 3.4.1'
 
 # Bootstrap JavaScript depends on jQuery. If you're using Rails 5.1+, add the jquery-rails gem to your Gemfile:
 gem 'jquery-rails'
+
+gem 'turbolinks', '~> 5.2.0'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"

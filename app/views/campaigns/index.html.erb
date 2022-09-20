@@ -1,16 +1,9 @@
 <div class="wrapper">
-  <%= render "application/sidebar" %>
+  <%= render "shared/sidebar" %>
 
   <div class="main">
 
-    <div class="content">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item active" aria-current="page">Campaigns</li>
-        </ol>
-      </nav>
-
-      <hr>
+    <div class="campaigns-wrapper">
 
       <%= render "campaigns_table" %>
 

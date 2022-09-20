@@ -1,0 +1,23 @@
+<div>
+  <div> 
+    <p>Upload new campaign finance report</p>
+    <%= form_with url: campaign_campaign_reports_path(@campaign) do |form| %>
+      <%= form.label :spreadsheet, "Finance Report" %>
+      <%= form.file_field :spreadsheet, style: "display: block", accept: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" %>
+      <%= form.submit "Submit" %>
+    <% end %>
+  </div>
+  <p>Finance Reports: </p>
+  <ul>
+    <% @campaign.campaign_reports.each do |report| %>
+      <li><%= link_to report.report_type, [@campaign, report] %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div>
+  <%= link_to "Edit this campaign", edit_campaign_path(@campaign) %> |
+  <%= link_to "Back to campaigns", "/campaigns" %>
+
+  <%= button_to "Destroy this campaign", @campaign, method: :delete %>
+</div>
