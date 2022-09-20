@@ -2,9 +2,9 @@
     <div class="home-table">
         <div class="card home-card">
             <div class="card-body">
-                <h4 class="card-title">
+                <div class="card-title">
                     Top Spenders
-                </h4>
+                </div>
                 <ol>
                     <li>
                         list of top spenders
@@ -16,9 +16,9 @@
     <div class="home-table">
         <div class="card home-card">
             <div class="card-body">
-                <h4 class="card-title">
+                <div class="card-title">
                     Top Contributors
-                </h4>
+                </div>
                 <ol>
                     <li>
                         list of top contributors
