@@ -1,41 +1,21 @@
-<p style="color: green"><%= notice %></p>
-<div class="container">
+<div class="wrapper">
+  <%= render "application/sidebar" %>
 
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item active" aria-current="page">Campaigns</li>
-      </ol>
-    </nav>
+  <div class="main">
 
-  <hr>
+    <div class="content">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active" aria-current="page">Campaigns</li>
+        </ol>
+      </nav>
 
-  <table id="campaigns" class="table">
-    <thead>
-      <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Office</th>
-        <th scope="col">Location</th>
-        <th scope="col">Election</th>
-        <th scope="col">Compliant</th>
-        <th scope="col">Status</th>
-      </tr>
-    </thead>
+      <hr>
 
-    <tbody>
-      <% @campaigns.each do |campaign| %>
-          <tr>
-            <th scope="row"><%= link_to campaign.name, campaign %></th>
-            <th><%= campaign.office %></th>
-            <th><%= campaign.city %></th>
-            <th><%= campaign.election.title %></th>
-              
-            <th><%# campaign compliant %></th>
-            <th><%# campaign status %></th>
-          </tr>
-      <% end %>
-    </tbody>
-  </table>
+      <%= render "campaigns_table" %>
 
-  <%= link_to "New campaign", new_campaign_path %>
+      <%= link_to "New campaign", new_campaign_path %>
+    </div>
 
+  </div>
 </div>

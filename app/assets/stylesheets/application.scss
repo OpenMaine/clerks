@@ -4,12 +4,17 @@ Use @import to import Sass files.
 Do not use *= require in Sass or your other stylesheets will not be able to access the Bootstrap mixins and variables.
  */
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@font-face {
+    font-family: "Nunito";
+    src: url('Nunito-VariableFont_wght.ttf');
+}
 
 body {
-    font: 'Nunito';
+    font-family: "Nunito";
     background: #F2F2F2;
 }
 
@@ -17,11 +22,30 @@ div.container {
     display: flex;
 }
 
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
 .filter-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+}
+
+.main {
+  width: 70%;
+}
+
+.sidebar {
+  width: auto;
+  height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: rgba(216, 216, 216, 0.4);
+  padding: 25px;
 }
 
 a {
@@ -83,8 +107,11 @@ a {
     justify-content: space-around;
 }
 
+.home-tables {
+    min-width: 300px;
+}
+
 .table {
-    width: 45%;
     min-width: 300px;
 }
 
@@ -92,4 +119,11 @@ a {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+
+.list-unstyled-components {
+    list-style: none;
+    padding: 25px;
+    font-size: x-large;
+    margin-top: 25px;
 }

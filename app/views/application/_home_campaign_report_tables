@@ -1,5 +1,5 @@
 <div class="tables" id="home-tables">
-    <div class="table">
+    <div class="home-table">
         <div class="card home-card">
             <div class="card-body">
                 <h4 class="card-title">
@@ -13,7 +13,7 @@
             </div>
         </div>
     </div>
-    <div class="table">
+    <div class="home-table">
         <div class="card home-card">
             <div class="card-body">
                 <h4 class="card-title">
