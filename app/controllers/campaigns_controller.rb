@@ -19,8 +19,8 @@ class CampaignsController < ApplicationController
   def edit
   end
 
-  def filter_by_location
-    @locations = Campaign.uniq.pluck(:location)
+  def locations_show
+    locations = Campaign.pluck("city").uniq
   end
 
   # POST /campaigns or /campaigns.json
