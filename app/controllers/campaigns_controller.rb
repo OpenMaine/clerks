@@ -19,10 +19,6 @@ class CampaignsController < ApplicationController
   def edit
   end
 
-  def locations_show
-    locations = Campaign.pluck("city").uniq
-  end
-
   # POST /campaigns or /campaigns.json
   def create
     @campaign = Campaign.new(campaign_params)
