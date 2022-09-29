@@ -37,27 +37,28 @@ class CampaignReportsController < ApplicationController
     report = campaign.campaign_reports.build
 
     # pull office type from sheet and save report
-    report.report_type = ss.sheet(0).row(2)[7]
+    report.report_type = ss.sheet(0).row(2)[8]
     report.save
 
     # Start iterating through and storing each row of the schedule A
     ss.sheet(1).parse().each do |row|
+      break if row[1]== nil
       a = report.campaign_schedule_as.build
       a.date = Chronic.parse(row[0])
-      a.name = row[1]
-      a.address = row[2]
-      a.city = row[3]
-      a.state = row[4]
-      a.zip = row[5]
-      a.occupation = row[6]
-      a.schedule_a_type = row[8]
+      a.name = row[2]
+      a.address = row[3]
+      a.city = row[4]
+      a.state = row[5]
+      a.zip = row[6]
+      a.occupation = row[7]
+      a.schedule_a_type = row[9]
 
       # Here we are converting the dollar amount into integer to track
       # by pennies. First we convert the float to a string with a guaranteed
       # mantissa of two digits. This ensures we have pennies. Then we remove
       # the decimal from the string and convert to integer. This helps us
       # avoid float math errors later on
-      a.amount = Integer(("%.2f" % row[9]).sub(".",""))
+      a.amount = Integer(("%.2f" % row[1]).sub(".",""))
       a.save
     end
 
