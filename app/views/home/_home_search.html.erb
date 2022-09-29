@@ -14,8 +14,9 @@
     <div class="form-group-large text-left">
       <label for="exampleFormControlSelect1">Location</label>
       <select class="form-control dropdown-custom" id="exampleFormControlSelect1">
-        <option>Portland</option>
-        <option>Waterville</option>
+        <% Campaign.pluck("city").uniq.each do |location| %>
+          <option><%= location %></option>
+        <% end %>
       </select>
     </div>
   </div>
@@ -23,8 +24,9 @@
     <div class="form-group-large text-left">
       <label for="exampleFormControlSelect1">Election</label>
       <select class="form-control dropdown-custom" id="exampleFormControlSelect2">
-        <option>2021</option>
-        <option>2022</option>
+        <% Election.pluck("title").uniq.each do |election| %>
+          <option><%= election %></option>
+        <% end %>
       </select>
     </div>
   </div>
