@@ -3,7 +3,8 @@ class CampaignsController < ApplicationController
 
   # GET /campaigns or /campaigns.json
   def index
-    @campaigns = Campaign.all
+    @campaigns = Campaign.all.order('name, created_at')
+    @campaigns = @campaigns.search(params[:search]) if params[:search].present?
   end
 
   # GET /campaigns/1 or /campaigns/1.json
