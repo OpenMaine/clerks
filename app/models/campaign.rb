@@ -4,6 +4,9 @@ class Campaign < ApplicationRecord
 
   enum :office, [:Mayor, :"City Council", :"School Board"]
 
+  scope :filter_by_location, -> (location_filter) { where city: location_filter }
+  scope :filter_by_election, -> (election_filter) { where election: election_filter }
+
   def self.search(search)
     where("name LIKE ?", "%#{search}%")
   end
