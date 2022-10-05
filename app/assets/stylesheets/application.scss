@@ -34,8 +34,9 @@ div.container {
     margin-bottom: 20px;
 }
 
-.main {
+.main-campaigns {
   width: 70%;
+  background-color: #FFFFFF;
 }
 
 .sidebar {
@@ -174,4 +175,8 @@ a {
 
 .navbar > div {
     padding: 0;
+}
+
+.campaigns-search-header {
+    padding: 60px;
 }

@@ -7,6 +7,7 @@ class CampaignsController < ApplicationController
     @campaigns = @campaigns.search(params[:search]) if params[:search].present?
     @campaigns = @campaigns.filter_by_location(params[:location_filter]) if params[:location_filter].present?
     @campaigns = @campaigns.filter_by_election(params[:election_filter]) if params[:election_filter].present?
+    @campaigns = @campaigns.filter_by_office(params[:office_filter]) if params[:office_filter].present?
     
   end
 
