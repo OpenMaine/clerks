@@ -37,7 +37,7 @@ class CampaignReportsController < ApplicationController
     report = campaign.campaign_reports.build
 
     # pull office type from sheet and save report
-    report.report_type = ss.sheet(0).row(2)[8]
+    report.report_type = ss.sheet(0).row(2)[7]
     report.save
 
     # Start iterating through and storing each row of the schedule A
