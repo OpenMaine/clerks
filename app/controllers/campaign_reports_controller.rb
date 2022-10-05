@@ -107,8 +107,8 @@ class CampaignReportsController < ApplicationController
       d = report.campaign_schedule_ds.build
       d.date = Chronic.parse(row[0])
       d.creditor = row[1]
-      d.purpose = row[2]
-      d.amount = process_money(row[3])
+      d.purpose = row[5]
+      d.amount = process_money(row[6])
       d.save
     end
 
