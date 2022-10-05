@@ -17,9 +17,8 @@
             <th><%= campaign.office %></th>
             <th><%= campaign.city %></th>
             <th><%= campaign.election.title %></th>
-                
-            <th><%# campaign compliant %></th>
-            <th><%# campaign status %></th>
+            <th><%= helpers.number_to_currency(campaign.campaign_reports[-1].campaign_schedule_f.receipts) %></th>
+            <th><%= helpers.number_to_currency(campaign.campaign_reports[-1].campaign_schedule_f.payments) %></th>
             </tr>
         <% end %>
     </tbody>
