@@ -1,7 +1,6 @@
 class CampaignScheduleB < ApplicationRecord
   belongs_to :campaign_report
 
-  enum :schedule_b_type, [:CNS,:CON,:EQP,:FND,:FOD,:LIT,:MHS,
-                          :OFF,:OTH,:PHO,:POL,:POS,:PRO,:PRT,:RAD,
-                          :SAL,:TRV,:TVN,:WEB, :ONL, :APP]
+  enum :schedule_b_type, [:APP, :CNS, :CON, :EQP, :EVT, :FOD, :HRD, :LIT, :MHS, :OFF, :ONL, :OTH, :PER, :PHO, :POL, :POS, :PRO, :RAD, :TKT, :TVN, :WEB]
+
 end
