@@ -1,37 +1,54 @@
-<div id="<%= dom_id campaign %>">
-  <p>
-    <strong>Election:</strong>
-    <%= campaign.election.title %>
-  </p>
+<div class="wrapper">
+  <%= render "shared/sidebar" %>
 
-  <p>
-    <strong>Name:</strong>
-    <%= campaign.name %>
-  </p>
+  <div class="main">
 
-  <p>
-    <strong>Street:</strong>
-    <%= campaign.street %>
-  </p>
+    <div class="content">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item" aria-current="page">Campaigns</li>
+          <li class="breadcrumb-item active" aria-current="page"><%= campaign.name %></li>
+        </ol>
+      </nav>
 
-  <p>
-    <strong>City:</strong>
-    <%= campaign.city %>
-  </p>
+      <div id="<%= dom_id campaign %>" class="candidate-header">
+        <h3 class="candidate-name-header">
+          <div><%= campaign.name %></div>
+        </h3>
+        <div>
+          <%= campaign.office + " Candidate" %>
+        </div>
+        <div>
+          <%= campaign.election.title %>
+        </div>
+      </div>
 
-  <p>
-    <strong>Telephone:</strong>
-    <%= campaign.telephone %>
-  </p>
+      <div class="container-fluid">
+          <div class="row-fluid">
+            <div class="span8 well">
+                <ul class="nav nav-tabs">
+                    <li>
+                      <a href="#summary" data-target="#summary" data-toggle="tab">Summary</a>
+                    </li>
+                    <li>
+                      <a href="#filings" data-target="#filings" data-toggle="tab">Filings</a>
+                    </li>
+                    <li>
+                      <a href="#contact" data-target="#contact" data-toggle="tab">Contact</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane" id="summary">summary tab content</div>
+                    <div class="tab-pane" id="filings">filings tab content</div>
+                    <div class="tab-pane" id="contact">contact tab content</div>
+                </div>
+            </div>
+          </div>
+      </div>
 
-  <p>
-    <strong>Email:</strong>
-    <%= campaign.email %>
-  </p>
+      <hr>
 
-  <p>
-    <strong>Office:</strong>
-    <%= campaign.office %>
-  </p>
+    </div>
 
+  </div>
 </div>
