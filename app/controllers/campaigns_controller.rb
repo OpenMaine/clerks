@@ -3,7 +3,12 @@ class CampaignsController < ApplicationController
 
   # GET /campaigns or /campaigns.json
   def index
-    @campaigns = Campaign.all
+    @campaigns = Campaign.all.order('name, created_at')
+    @campaigns = @campaigns.search(params[:search]) if params[:search].present?
+    @campaigns = @campaigns.filter_by_location(params[:location_filter]) if !params[:location_filter].blank?
+    @campaigns = @campaigns.filter_by_office(params[:office_filter]) if params[:office_filter].present?
+    @campaigns = @campaigns.filter_by_election(params[:election_filter]) if !params[:election_filter].blank?
+    
   end
 
   # GET /campaigns/1 or /campaigns/1.json
@@ -68,4 +73,5 @@ class CampaignsController < ApplicationController
     def campaign_params
       params.require(:campaign).permit(:election_id, :name, :street, :city, :telephone, :email, :office)
     end
+
 end

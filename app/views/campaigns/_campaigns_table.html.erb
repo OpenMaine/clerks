@@ -1,0 +1,31 @@
+<table id="campaigns" class="table">
+    <thead>
+        <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Office</th>
+        <th scope="col">Location</th>
+        <th scope="col">Election</th>
+        <th scope="col">Contributions</th>
+        <th scope="col">Expenditures</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @campaigns.each do |campaign| %>
+            <tr>
+            <th scope="row"><%= link_to campaign.name, campaign %></th>
+            <th><%= campaign.office %></th>
+            <th><%= campaign.city %></th>
+            <th><%= campaign.election.title %></th>
+            <th>
+                <%= helpers.number_to_currency(campaign.campaign_reports[-1].campaign_schedule_f.receipts) if !campaign.campaign_reports[-1].blank? %>
+                <%= "NA" if campaign.campaign_reports[-1].blank? %>
+            </th>
+            <th>
+                <%= helpers.number_to_currency(campaign.campaign_reports[-1].campaign_schedule_f.payments) if !campaign.campaign_reports[-1].blank? %>
+                <%= "NA" if campaign.campaign_reports[-1].blank? %>
+            </th>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

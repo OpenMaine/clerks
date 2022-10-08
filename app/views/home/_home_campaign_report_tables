@@ -1,0 +1,30 @@
+<div class="tables" id="home-tables">
+    <div class="home-table">
+        <div class="card home-card">
+            <div class="card-body">
+                <div class="card-title">
+                    Top Spenders
+                </div>
+                <ol>
+                    <li>
+                        list of top spenders
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="home-table">
+        <div class="card home-card">
+            <div class="card-body">
+                <div class="card-title">
+                    Top Contributors
+                </div>
+                <ol>
+                    <li>
+                        list of top contributors
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>

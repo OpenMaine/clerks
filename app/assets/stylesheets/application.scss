@@ -4,104 +4,56 @@ Use @import to import Sass files.
 Do not use *= require in Sass or your other stylesheets will not be able to access the Bootstrap mixins and variables.
  */
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-body {
-    font: 'Nunito';
+@font-face {
+    font-family: "Nunito";
+    src: url('Nunito-VariableFont_wght.ttf');
 }
 
-.container {
-    margin: 0px;
-    padding: 0px 20px 20px 20px;
-    width: 100%;
+body {
+    font-family: "Nunito";
+    background: #F2F2F2;
+}
+
+div.container {
+    display: flex;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: left;
+  }
+
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.main-campaigns {
+  width: 70%;
+  background-color: #FFFFFF;
+}
+
+.sidebar {
+  width: auto;
+  height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: rgba(216, 216, 216, 0.4);
+  padding: 25px;
 }
 
 a {
     color: #007C8A;
 }
 
-.wrapper {
-    display: flex;
-    width: 100%;
-    align-items: stretch;
-}
-
-#sidebar {
-    min-width: 295px;
-    max-width: 295px;
-    min-height: 100vh;
-    background: rgba(216, 216, 216, 0.4);
-    transition: all 0.3s;
-}
-
-.sidebar-header {
-    padding: 20px 46px 20px 46px;
-
-    font-weight: 700;
-    font-size: 32px;
-
-    color: #007C8A;
-}
-
-#sidebar ul.components {
-    padding: 20px 0;
-    border-bottom: 1px solid #47748b;
-}
-
-#sidebar ul {
-    list-style: none;
-    color: #fff;
-    padding: 20px 46px 20px 46px;
-}
-
-#sidebar ul li a {
-    padding: 10px;
-    font-size: 30px;
-    display: block;
-}
-
-#sidebar ul li a:hover {
-    color: #7386D5;
-}
-
-.navbar {
-    padding: 20px;
-    margin: 0px;
-}
-
-.breadcrumb {
-    background-color: #fff;
-    padding: 0px;
-}
-
-.breadcrumb >.breadcrumb-item {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 33px;
-
-    color: #007C8A;
-}
-
-.campaign-card > .card-body > *{
-    display: inline-block;
-    vertical-align: middle;
-}
-
-th > a {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 33px;
-    text-decoration-line: underline;
-
-    color: #0645AD;
-}
-
-tbody {
-    font-style: normal;
+.nav-item {
     font-weight: 500;
     font-size: 24px;
     line-height: 33px;
@@ -109,23 +61,122 @@ tbody {
     color: #000000;
 }
 
-thead {
+.navbar-custom {
+    padding: 25px;
+    background: white;
+}
+
+.searchbar-custom {
+    background-color: rgba(216, 216, 216, 0.4);
+    border-left: none;
+    height: 100%;
+    font-size: large;
+    border-radius: 8px;
+}
+
+.searchbar-icon-custom {
+    background-color: rgba(216, 216, 216, 0.4);
+    border-right: none;
+    height: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    span > svg {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.input-group-home-custom {
+    margin: 20px 0px 25px 0px;
+    height: 75px;
+}
+
+.dropdown-custom {
+    height: 50px;
+    min-width: 150px;
+    background-color: rgba(216, 216, 216, 0.4);
+}
+
+.input-group-dropdown-custom {
+    width: auto;
+    min-width: 75px;
+}
+
+.tables {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.home-tables {
+    min-width: 300px;
+}
+
+.table {
+    min-width: 300px;
+}
+
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.list-unstyled-components {
+    list-style: none;
+    padding: 25px;
+    font-size: x-large;
+    margin-top: 25px;
+}
+
+.candidate-header {
+    padding: 25px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 24px;
     line-height: 33px;
 
-    color: #4A4A4A;
+    color: #9B9B9B;
 }
 
-.table > thead > tr > th {
-    border: none;
+.candidate-name-header {
+    margin: 0;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34.56px;
+    line-height: 47px;
+    /* identical to box height */
+
+    color: #000000;
 }
 
-.table > tbody > tr > th {
-    padding: 18px;
+.campaigns-wrapper {
+    padding: 25px;
 }
 
-.table > tbody > tr > td {
-    border: none;
+#campaigns {
+    font-size: 24px;
+}
+
+.home-card {
+    background-color: #FFFFFF;
+    width: 45rem;
+    padding: 25px;
+    min-height: 40rem;
+}
+
+.card-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+
+    color: #000000;
+}
+
+.navbar > div {
+    padding: 0;
+}
+
+.campaigns-search-header {
+    padding: 60px;
 }
