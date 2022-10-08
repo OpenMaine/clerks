@@ -37,7 +37,7 @@ class CampaignReportsController < ApplicationController
     report = campaign.campaign_reports.build
 
     # pull office type from sheet and save report
-    report.report_type = ss.sheet(0).row(2)[8]
+    report.report_type = ss.sheet(0).row(2)[7]
     report.save
 
     # Start iterating through and storing each row of the schedule A
@@ -94,11 +94,11 @@ class CampaignReportsController < ApplicationController
     ss.sheet(4).parse().each do |row|
       c = report.campaign_schedule_cs.build
       c.lender = row[0]
-      c.balance_at_beginning = process_money(row[1])
-      c.amount_loaned = process_money(row[2])
-      c.amount_repaid = process_money(row[3])
-      c.amount_forgiven = process_money(row[4])
-      c.balance = process_money(row[5])
+      c.balance_at_beginning = process_money(row[1]) if !row[1].nil? 
+      c.amount_loaned = process_money(row[2]) if !row[2].nil?
+      c.amount_repaid = process_money(row[3]) if !row[3].nil?
+      c.amount_forgiven = process_money(row[4]) if !row[4].nil?
+      c.balance = process_money(row[5]) if !row[5].nil?
       c.save
     end
 
@@ -107,8 +107,8 @@ class CampaignReportsController < ApplicationController
       d = report.campaign_schedule_ds.build
       d.date = Chronic.parse(row[0])
       d.creditor = row[1]
-      d.purpose = row[2]
-      d.amount = process_money(row[3])
+      d.purpose = row[5]
+      d.amount = process_money(row[6])
       d.save
     end
 
