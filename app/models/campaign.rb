@@ -5,7 +5,7 @@ class Campaign < ApplicationRecord
   enum :office, [:Mayor, :"City Council", :"School Board", :"Charter Commission"]
 
   scope :filter_by_location, -> (location_filter) { where city: location_filter }
-  scope :filter_by_election, -> (election_filter) { where election: election_filter }
+  scope :filter_by_election, -> (election_filter) { where election_id: election_filter }
   scope :filter_by_office, -> (office_filter) { where office: office_filter }
 
   def self.search(search)
