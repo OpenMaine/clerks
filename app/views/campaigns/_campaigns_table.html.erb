@@ -18,11 +18,11 @@
             <th><%= campaign.city %></th>
             <th><%= campaign.election.title %></th>
             <th>
-                <%= helpers.number_to_currency(campaign.campaign_reports[-1].campaign_schedule_f.receipts) if !campaign.campaign_reports[-1].blank? %>
+                <%= format_money(campaign.campaign_reports[-1].campaign_schedule_f.receipts) if !campaign.campaign_reports[-1].blank? %>
                 <%= "NA" if campaign.campaign_reports[-1].blank? %>
             </th>
             <th>
-                <%= helpers.number_to_currency(campaign.campaign_reports[-1].campaign_schedule_f.payments) if !campaign.campaign_reports[-1].blank? %>
+                <%= format_money(campaign.campaign_reports[-1].campaign_schedule_f.payments) if !campaign.campaign_reports[-1].blank? %>
                 <%= "NA" if campaign.campaign_reports[-1].blank? %>
             </th>
             </tr>
