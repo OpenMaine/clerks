@@ -15,7 +15,7 @@ Do not use *= require in Sass or your other stylesheets will not be able to acce
 
 body {
     font-family: "Nunito";
-    background: #F2F2F2;
+    background: #FFFFFF;
 }
 
 div.container {
@@ -37,6 +37,10 @@ div.container {
 .main-campaigns {
   width: 70%;
   background-color: #FFFFFF;
+}
+
+.main {
+    width: 100%;
 }
 
 .sidebar {
@@ -179,4 +183,36 @@ a {
 
 .campaigns-search-header {
     padding: 60px;
+}
+
+.nav-tabs {
+    font-weight: 700;
+    font-size: x-large;
+}
+
+.campaign-summary-content {
+    display: flex;
+    gap: 2rem;
+}
+
+.financial-totals-box {
+    width: 50%;
+}
+
+.financial-totals-container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-content: center;
+}
+
+.financial-totals-content {
+    align-items: center;
+    width: 300px;
+    height: 80px;
+}
+
+.breadcrumb {
+    background-color: #FFFFFF;
 }

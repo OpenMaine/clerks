@@ -12,4 +12,30 @@ class Campaign < ApplicationRecord
     where("name LIKE ?", "%#{search}%")
   end
 
+  def format_money(amt)
+    "$#{amt/100}.#{"%.02d" % (amt%100)}"
+  end
+
+  def expenditures_schedule_f_all
+    sum = 0
+
+    for report in self.campaign_reports.all do
+      sum += report.campaign_schedule_f.payments
+    end
+
+    format_money(sum)
+  end
+
+  def contributions_schedule_f_all
+    sum = 0
+
+    for report in self.campaign_reports.all do
+      sum += report.campaign_schedule_f.receipts
+    end
+
+    format_money(sum)
+  end
+
+
+
 end
