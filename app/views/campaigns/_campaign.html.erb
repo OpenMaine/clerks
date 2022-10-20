@@ -46,23 +46,28 @@
                 <div class="financial-totals-container">
                   <div class="financial-totals-content">
                     <h3>Cash Contributions</h3>
-                    <div>35000</div>
+                    <%= campaign.cash_contributions_all if !campaign.campaign_reports[-1].blank? %>
+                    <%= "NA" if campaign.campaign_reports[-1].blank? %>
                   </div>
                   <div class="financial-totals-content">
                     <h3>In-Kind Contributions</h3>
-                    <div>35000</div>
+                    <%= campaign.in_kind_contributions_all if !campaign.campaign_reports[-1].blank? %>
+                    <%= "NA" if campaign.campaign_reports[-1].blank? %>
                   </div>
                   <div class="financial-totals-content">
                     <h3>Expenditures</h3>
-                    <div>35000</div>
+                    <%= campaign.expenditures_schedule_f_all if !campaign.campaign_reports[-1].blank? %>
+                    <%= "NA" if campaign.campaign_reports[-1].blank? %>
                   </div>
                   <div class="financial-totals-content">
                     <h3>Loans</h3>
-                    <div>35000</div>
+                    <%= campaign.loan_balance_all if !campaign.campaign_reports[-1].blank? %>
+                    <%= "NA" if campaign.campaign_reports[-1].blank? %>
                   </div>
                   <div class="financial-totals-content">
                     <h3>Cash-on-Hand</h3>
-                    <div>35000</div>
+                    <%= campaign.most_recent_cash_balance if !campaign.campaign_reports[-1].blank? %>
+                    <%= "NA" if campaign.campaign_reports[-1].blank? %>
                   </div>
                 </div>
               </div>

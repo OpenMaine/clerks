@@ -11,7 +11,7 @@
   </div>
   <p>Finance Reports: </p>
   <ul>
-    <% @campaign.campaign_reports.each do |report| %>
+    <% @campaign.campaign_reports.order('report_type').each do |report| %>
       <li><%= link_to report.report_type, [@campaign, report] %></li>
     <% end %>
   </ul>

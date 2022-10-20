@@ -36,6 +36,48 @@ class Campaign < ApplicationRecord
     format_money(sum)
   end
 
+  def cash_contributions_all
+    sum = 0
 
+    for report in self.campaign_reports.all do
+      for schedule_a in report.campaign_schedule_as
+        unless !schedule_a.description.nil?
+          sum += schedule_a.amount
+        end
+      end
+    end
+
+    format_money(sum)
+  end
+
+  def in_kind_contributions_all
+    sum = 0
+
+    for report in self.campaign_reports.all do
+      for schedule_a in report.campaign_schedule_as
+        unless schedule_a.description.nil?
+          sum += schedule_a.amount
+        end
+      end
+    end
+
+    format_money(sum)
+  end
+
+  def loan_balance_all
+    sum = 0
+
+    for report in self.campaign_reports.all do
+      for schedule_c in report.campaign_schedule_cs
+        sum += schedule_c.balance
+      end
+    end
+
+    format_money(sum)
+  end
+
+  def most_recent_cash_balance
+    format_money(self.campaign_reports.order('report_type')[-1].campaign_schedule_f.balance)
+  end
 
 end

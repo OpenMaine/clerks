@@ -6,7 +6,7 @@ class CampaignReportsController < ApplicationController
 
   # GET /campaign_reports or /campaign_reports.json
   def index
-    @campaign_reports = CampaignReport.all
+    @campaign_reports = CampaignReport.all.order('report_type')
   end
 
   # GET /campaign_reports/1 or /campaign_reports/1.json
@@ -75,7 +75,7 @@ class CampaignReportsController < ApplicationController
       a.occupation = row[6]
       a.schedule_a_type = row[8]
       a.amount = process_money(row[9])
-      a.description = row[9]
+      a.description = row[10]
       a.save
     end
 
