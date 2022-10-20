@@ -12,4 +12,91 @@ class Campaign < ApplicationRecord
     where("name LIKE ?", "%#{search}%")
   end
 
+  def format_money(amt)
+    "$#{amt/100}.#{"%.02d" % (amt%100)}"
+  end
+
+  def expenditures_schedule_f_all
+    sum = 0
+
+    for report in self.campaign_reports.all do
+      sum += report.campaign_schedule_f.payments
+    end
+
+    format_money(sum)
+  end
+
+  def contributions_schedule_f_all
+    sum = 0
+
+    for report in self.campaign_reports.all do
+      sum += report.campaign_schedule_f.receipts
+    end
+
+    format_money(sum)
+  end
+
+  def cash_contributions_all
+    sum = 0
+
+    for report in self.campaign_reports.all do
+      for schedule_a in report.campaign_schedule_as
+        unless !schedule_a.description.nil?
+          sum += schedule_a.amount
+        end
+      end
+    end
+
+    format_money(sum)
+  end
+
+  def in_kind_contributions_all
+    sum = 0
+
+    for report in self.campaign_reports.all do
+      for schedule_a in report.campaign_schedule_as
+        unless schedule_a.description.nil?
+          sum += schedule_a.amount
+        end
+      end
+    end
+
+    format_money(sum)
+  end
+
+  def loan_balance_all
+    sum = 0
+
+    for report in self.campaign_reports.all do
+      for schedule_c in report.campaign_schedule_cs
+        sum += schedule_c.balance
+      end
+    end
+
+    format_money(sum)
+  end
+
+  def most_recent_cash_balance
+    format_money(self.campaign_reports.order('report_type')[-1].campaign_schedule_f.balance)
+  end
+
+  def top_contributors_all
+    schedule_as_list = []
+    
+    for report in self.campaign_reports do
+      for schedule in report.campaign_schedule_as do
+        schedule_as_list.push(schedule)
+      end
+    end
+
+    schedule_as_list = schedule_as_list.group_by(&:name).map do |name, items|
+      {
+        amount: format_money(items.sum(&:amount)),
+        name: name
+      }
+    end
+
+    schedule_as_list.sort_by { |i| -i[:amount].scan(/\d+/).first.to_i }
+  end
+
 end
