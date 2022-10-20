@@ -80,4 +80,23 @@ class Campaign < ApplicationRecord
     format_money(self.campaign_reports.order('report_type')[-1].campaign_schedule_f.balance)
   end
 
+  def top_contributors_all
+    schedule_as_list = []
+    
+    for report in self.campaign_reports do
+      for schedule in report.campaign_schedule_as do
+        schedule_as_list.push(schedule)
+      end
+    end
+
+    schedule_as_list = schedule_as_list.group_by(&:name).map do |name, items|
+      {
+        amount: format_money(items.sum(&:amount)),
+        name: name
+      }
+    end
+
+    schedule_as_list.sort_by { |i| -i[:amount].scan(/\d+/).first.to_i }
+  end
+
 end

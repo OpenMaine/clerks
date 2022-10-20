@@ -76,9 +76,13 @@
                 <h2>Top Contributors</h2>
                 <div class="top-contributors-container">
                   <ol>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                  <% campaign.top_contributors_all.first(10).each do |contributor| %>
+                    <li>
+                      <%= contributor[:name] %>
+                      -
+                      <%= contributor[:amount] %>
+                    </li>    
+                  <% end %>
                   </ol>
                 </div>
               </div>
