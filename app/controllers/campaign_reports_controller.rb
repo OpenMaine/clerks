@@ -7,6 +7,7 @@ class CampaignReportsController < ApplicationController
   # GET /campaign_reports or /campaign_reports.json
   def index
     @campaign_reports = CampaignReport.all.order('report_type')
+    @campaign = Campaign.find(params[:campaign_id])
   end
 
   # GET /campaign_reports/1 or /campaign_reports/1.json

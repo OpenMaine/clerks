@@ -1,5 +1,5 @@
 <div>
-  <div> 
+  <div>
     <p>Upload new campaign finance report</p>
     <%= form_with url: campaign_campaign_reports_path(@campaign) do |form| %>
       <%= form.label :spreadsheet, "Finance Report" %>
@@ -9,7 +9,7 @@
   </div>
   <p>Finance Reports: </p>
   <ul>
-    <% @campaign.campaign_reports.each do |report| %>
+    <% @campaign.campaign_reports.order('report_type').each do |report| %>
       <li><%= link_to report.report_type, [@campaign, report] %></li>
     <% end %>
   </ul>
@@ -17,7 +17,7 @@
 
 <div>
   <%= link_to "Edit this campaign", edit_campaign_path(@campaign) %> |
-  <%= link_to "Back to campaigns", "/campaigns" %>
+  <%= link_to "Back to campaigns", campaigns_path %>
 
   <%= button_to "Destroy this campaign", @campaign, method: :delete %>
 </div>
