@@ -27,14 +27,14 @@
           <div class="row-fluid">
             <div class="span8">
                 <ul class="nav nav-tabs">
-                    <li>
-                      <a href="#summary" data-target="#summary" data-toggle="tab">Summary</a>
+                    <li class="nav-item active">
+                      <%= link_to "Summary", "/summary", class: "nav-link"%>
                     </li>
-                    <li>
-                      <a href="#filings" data-target="#filings" data-toggle="tab">Filings</a>
+                    <li class="nav-item">
+                      <%= link_to "Filings", "/filings", class: "nav-link" %>
                     </li>
-                    <li>
-                      <a href="#contact" data-target="#contact" data-toggle="tab">Contact</a>
+                    <li class="nav-item">
+                      <%= link_to "Contact", "/contact", class: "nav-link" %>
                     </li>
                 </ul>
             </div>
