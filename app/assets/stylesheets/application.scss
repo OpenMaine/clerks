@@ -25,32 +25,46 @@ div.container {
 .wrapper {
     display: flex;
     justify-content: left;
-  }
+    width: 100vh;
+}
+
+.form-group-large {
+    font-size: 29px;
+    font-weight: 700;
+}
 
 .filter-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    display: flex;
+}
+
+label {
+    margin-bottom: 0px;
 }
 
 .main-campaigns {
-  width: 70%;
-  background-color: #FFFFFF;
+    background-color: #FFFFFF;
 }
 
 .main {
     width: 100%;
 }
 
+.sidebar-header {
+    padding: 15px 25px 33px 50px;
+}
+
 .sidebar {
-  width: auto;
-  height: 100vh;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  background-color: rgba(216, 216, 216, 0.4);
-  padding: 25px;
+    width: auto;
+    height: 100vh;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: rgba(216, 216, 216, 0.4);
+    padding: 25px;
 }
 
 a {
@@ -74,7 +88,8 @@ a {
     background-color: rgba(216, 216, 216, 0.4);
     border-left: none;
     height: 100%;
-    font-size: large;
+    font-size: 20.5px;
+    font-weight: 500;
     border-radius: 8px;
 }
 
@@ -82,11 +97,11 @@ a {
     background-color: rgba(216, 216, 216, 0.4);
     border-right: none;
     height: 100%;
-    padding: 20px;
+    padding: 20px 20px 17px 35px;
     border-radius: 8px;
     span > svg {
-        width: 25px;
-        height: 25px;
+        width: 43px;
+        height: 43px;
     }
 }
 
@@ -97,13 +112,14 @@ a {
 
 .dropdown-custom {
     height: 50px;
-    min-width: 150px;
+    min-width: 285px;
     background-color: rgba(216, 216, 216, 0.4);
 }
 
 .input-group-dropdown-custom {
     width: auto;
     min-width: 75px;
+    padding-right: 40px;
 }
 
 .tables {
@@ -120,17 +136,16 @@ a {
     min-width: 300px;
 }
 
-.filter-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
 .list-unstyled-components {
     list-style: none;
     padding: 25px;
-    font-size: x-large;
-    margin-top: 25px;
+    padding-left: 61px;
+    font-size: 36px;
+}
+
+.sidebar-nav-item {
+    font-size: 36px;
+    padding-bottom: 15px;
 }
 
 .candidate-header {
@@ -182,7 +197,7 @@ a {
 }
 
 .campaigns-search-header {
-    padding: 60px;
+    padding: 40px;
 }
 
 .nav-tabs {
