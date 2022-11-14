@@ -77,7 +77,7 @@ class Campaign < ApplicationRecord
   end
 
   def most_recent_cash_balance
-    format_money(self.campaign_reports.order('report_type')[-1].campaign_schedule_f.balance)
+    format_money(self.campaign_reports.order('report_type')[-1].campaign_schedule_f.balance) if !self.campaign_reports.order('report_type')[-1].campaign_schedule_f.nil?
   end
 
   def top_contributors_all
