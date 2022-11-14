@@ -116,9 +116,9 @@ class CampaignReportsController < ApplicationController
     # There should only be one row for a schedule F
     f = report.build_campaign_schedule_f
     row = ss.sheet(6).parse()[0]
-    f.receipts = process_money(row[0])
-    f.payments = process_money(row[1])
-    f.balance  = process_money(row[2])
+    f.receipts = process_money(row[0]) if !row[0].nil?
+    f.payments = process_money(row[1]) if !row[1].nil?
+    f.balance  = process_money(row[2]) if !row[2].nil?
     f.save
 
     redirect_to [campaign, report]
