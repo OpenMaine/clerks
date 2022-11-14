@@ -14,6 +14,10 @@ class CampaignsController < ApplicationController
   def show
   end
 
+  def contact
+    @campaign = Campaign.find(params[:id])
+  end
+
   # GET /campaigns/new
   def new
     @campaign = Campaign.new

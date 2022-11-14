@@ -8,6 +8,9 @@ Rails.application.routes.draw do
       resources :campaign_schedule_ds
       resources :campaign_schedule_fs
     end
+    member do
+      get 'contact'
+    end
   end
   resources :elections
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

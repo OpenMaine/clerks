@@ -30,40 +30,36 @@
                   <li class="nav-item">
                     <%= link_to "Summary", @campaign, class: "nav-link"%>
                   </li>
-                  <li class="nav-item active">
+                  <li class="nav-item">
                     <%= link_to "Filings", campaign_campaign_reports_path(@campaign.id), class: "nav-link" %>
                   </li>
-                  <li class="nav-item">
-                    <%= link_to "Contact", contact_campaign_path(@campaign.id), class: "nav-link" %>
+                  <li class="nav-item active">
+                    <%= link_to "Contact", contact_campaign_path, class: "nav-link" %>
                   </li>
               </ul>
           </div>
         </div>
 
-        <div>
-          <div>
-            <p>Upload new campaign finance report</p>
-            <%= form_with url: campaign_campaign_reports_path(@campaign) do |form| %>
-              <%= form.label :spreadsheet, "Finance Report" %>
-              <%= form.file_field :spreadsheet, style: "display: block", accept: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" %>
-              <%= form.submit "Submit" %>
-            <% end %>
-          </div>
-          <p>Finance Reports: </p>
-          <ul>
-            <% @campaign.campaign_reports.order('report_type').each do |report| %>
-              <li><%= link_to report.report_type, [@campaign, report] %></li>
-            <% end %>
-          </ul>
-        </div>
-
-        <div>
-          <%= link_to "Edit this campaign", edit_campaign_path(@campaign) %> |
-          <%= link_to "Back to campaigns", campaigns_path %>
-
-          <%= button_to "Destroy this campaign", @campaign, method: :delete %>
-        </div>
-      </div>
+        <div class="campaign-contact-content">
+            <div class="campaign-contact-box">
+                <h2>Contact</h2>
+                <div class="campaign-contact-container">
+                <div>
+                    <h3>Address</h3>
+                    <%= @campaign.street %>
+                    <%= @campaign.city %>
+                </div>
+                <div>
+                    <h3>Phone</h3>
+                    <%= @campaign.telephone %>
+                </div>
+                <div>
+                    <h3>Email</h3>
+                    <%= @campaign.email %>
+                </div>
+                </div>
+            </div>
+            </div>
 
       <hr>
 
@@ -71,4 +67,3 @@
 
   </div>
 </div>
-
