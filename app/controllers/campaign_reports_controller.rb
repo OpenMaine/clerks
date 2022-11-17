@@ -38,29 +38,31 @@ class CampaignReportsController < ApplicationController
     report = campaign.campaign_reports.build
 
     # pull office type from sheet and save report
-    report.report_type = ss.sheet(0).row(2)[7]
+    report.report_type = ss.sheet(0).row(2)[8]
     report.save
 
     # Start iterating through and storing each row of the schedule A
-    ss.sheet(1).parse().each do |row|
-      break if row[1]== nil
-      a = report.campaign_schedule_as.build
-      a.date = Chronic.parse(row[0])
-      a.name = row[2]
-      a.address = row[3]
-      a.city = row[4]
-      a.state = row[5]
-      a.zip = row[6]
-      a.occupation = row[7]
-      a.schedule_a_type = row[9]
+    ss.sheet(1).parse(headers: true).each do |row|
+      # debugger
+      if row["Amount"] != "Amount"
+        a = report.campaign_schedule_as.build
+        a.date = Chronic.parse(row["Date Received"])
+        a.name = row["Contributor Name"]
+        a.address = row["Address"]
+        a.city = row["City"]
+        a.state = row["State"]
+        a.zip = row["Zip"]
+        a.occupation = row["Occupation"]
+        a.schedule_a_type = row["Type"]
 
-      # Here we are converting the dollar amount into integer to track
-      # by pennies. First we convert the float to a string with a guaranteed
-      # mantissa of two digits. This ensures we have pennies. Then we remove
-      # the decimal from the string and convert to integer. This helps us
-      # avoid float math errors later on
-      a.amount = Integer(("%.2f" % row[1]).sub(".",""))
-      a.save
+        # Here we are converting the dollar amount into integer to track
+        # by pennies. First we convert the float to a string with a guaranteed
+        # mantissa of two digits. This ensures we have pennies. Then we remove
+        # the decimal from the string and convert to integer. This helps us
+        # avoid float math errors later on
+        a.amount = Integer(("%.2f" % row["Amount"]).sub(".","")) if row["Amount"] != nil
+        a.save
+      end
     end
 
     # Start iterating through and storing each row of the schedule A1's
@@ -95,11 +97,11 @@ class CampaignReportsController < ApplicationController
     ss.sheet(4).parse().each do |row|
       c = report.campaign_schedule_cs.build
       c.lender = row[0]
-      c.balance_at_beginning = process_money(row[1]) if !row[1].nil? 
-      c.amount_loaned = process_money(row[2]) if !row[2].nil?
-      c.amount_repaid = process_money(row[3]) if !row[3].nil?
-      c.amount_forgiven = process_money(row[4]) if !row[4].nil?
-      c.balance = process_money(row[5]) if !row[5].nil?
+      c.balance_at_beginning = process_money(row[1]) if row[1] != nil 
+      c.amount_loaned = process_money(row[2]) if row[2] != nil
+      c.amount_repaid = process_money(row[3]) if row[3] != nil
+      c.amount_forgiven = process_money(row[4]) if row[4] != nil
+      c.balance = process_money(row[5]) if row[5] != nil
       c.save
     end
 
@@ -114,12 +116,14 @@ class CampaignReportsController < ApplicationController
     end
 
     # There should only be one row for a schedule F
-    f = report.build_campaign_schedule_f
-    row = ss.sheet(6).parse()[0]
-    f.receipts = process_money(row[0]) if !row[0].nil?
-    f.payments = process_money(row[1]) if !row[1].nil?
-    f.balance  = process_money(row[2]) if !row[2].nil?
-    f.save
+    if ss.sheet(6).row(1)[1] != nil
+      f = report.build_campaign_schedule_f
+      row = ss.sheet(6).parse(headers: true)[1]
+      f.receipts = process_money(row["Total Receipts"]) if row["Total Receipts"] != nil
+      f.payments = process_money(row["Total Payments"]) if row["Total Payments"] != nil
+      f.balance  = process_money(row["Cash Balance"]) if row["Cash Balance"] != nil
+      f.save
+    end
 
     redirect_to [campaign, report]
   end

@@ -1,17 +1,17 @@
 <div id="<%= dom_id campaign_schedule_f %>">
   <p>
     <strong>Receipts:</strong>
-    <%= format_money(campaign_schedule_f.receipts) %>
+    <%= format_money(campaign_schedule_f.receipts) if campaign_schedule_f.receipts != nil %>
   </p>
 
   <p>
     <strong>Payments:</strong>
-    <%= format_money(campaign_schedule_f.payments) %>
+    <%= format_money(campaign_schedule_f.payments) if campaign_schedule_f.payments != nil %>
   </p>
 
   <p>
     <strong>Balance:</strong>
-    <%= format_money(campaign_schedule_f.balance) %>
+    <%= format_money(campaign_schedule_f.balance) if campaign_schedule_f.balance != nil %>
   </p>
 
 </div>
