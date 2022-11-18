@@ -12,7 +12,7 @@
     <tbody>
         <% @campaigns.each do |campaign| %>
             <tr>
-                <th scope="row"><%= link_to campaign.name, campaign %></th>
+                <th scope="row"><%= link_to campaign.name, campaign, {:class => 'text-decoration-none'} %></th>
                     <td><%= campaign.office %></td>
                     <td><%= campaign.city %></td>
                     <td><%= campaign.election.title %></td>
