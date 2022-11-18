@@ -234,6 +234,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  autoprefixer-rails
   bootsnap
   bootstrap-sass (~> 3.4.1)
   capybara
