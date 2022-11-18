@@ -115,7 +115,8 @@ a {
     height: 100%;
     padding: 20px 20px 17px 35px;
     border-radius: 8px;
-    span > svg {
+
+    span>svg {
         width: 43px;
         height: 43px;
     }
@@ -126,12 +127,48 @@ a {
     height: 75px;
 }
 
+.dropdown-searchbar {
+    max-width: 275px;
+}
+
 .dropdown-toggle {
     height: 50px;
     min-width: 265px;
     background-color: rgba(216, 216, 216, 0.4);
     font-weight: 500;
     font-size: 17px;
+    border: 2px solid rgba(255,255,255,0);
+    border-right-width: 15px;
+
+    &:hover {
+        background-color: rgba(216, 216, 216, 0.4);
+        color: #4a4a4a;
+        font-weight: 500;
+        border-color: rgba(255,255,255,0);
+    }
+
+    &:focus {
+        background-color: rgba(216, 216, 216, 0.4);
+        color: #4a4a4a;
+        font-weight: 500;
+        border-color: rgba(255,255,255,0);
+    }
+
+    &:active {
+        &:hover {
+            background-color: rgba(216, 216, 216, 0.4);
+            color: #4a4a4a;
+            font-weight: 500;
+            border-color: rgba(255,255,255,0);
+        }
+
+        &:focus {
+            background-color: rgba(216, 216, 216, 0.4);
+            color: #4a4a4a;
+            font-weight: 500;
+            border-color: rgba(255,255,255,0);
+        }
+    }
 }
 
 .btn-secondary {
@@ -150,20 +187,26 @@ a {
     font-size: 18px;
     padding: 10px 20px 10px 20px;
     border-radius: 4px;
+
     &:hover {
         background-color: #007C8A;
-      }
-    &:focus {
-    background-color: #007C8A;
     }
+
+    &:focus {
+        background-color: #007C8A;
+    }
+
     &:active {
         &:hover {
             background-color: #007C8A;
         }
+
         &:focus {
             background-color: #007C8A;
         }
     }
+
+    border: none;
 }
 
 .btn-search-container {
@@ -228,7 +271,7 @@ a {
     color: #000000;
 }
 
-.navbar > div {
+.navbar>div {
     padding: 0;
 }
 
