@@ -45,6 +45,7 @@ gem 'sassc-rails', '>= 2.1.0'
 
 # added boostrap for component styling
 gem 'bootstrap-sass', '~> 3.4.1'
+gem 'autoprefixer-rails'
 
 # Bootstrap JavaScript depends on jQuery. If you're using Rails 5.1+, add the jquery-rails gem to your Gemfile:
 gem 'jquery-rails'

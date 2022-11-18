@@ -1,5 +1,9 @@
 module CampaignReportsHelper
   def format_money(amt)
-    "$#{amt/100}.#{"%.02d" % (amt%100)}"
+    if amt != nil
+      "$#{amt/100}.#{"%.02d" % (amt%100)}"
+    else
+      "NA"
+    end
   end
 end

@@ -1,30 +1,29 @@
 <table id="campaigns" class="table">
     <thead>
         <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Office</th>
-        <th scope="col">Location</th>
-        <th scope="col">Election</th>
-        <th scope="col">Contributions</th>
-        <th scope="col">Expenditures</th>
+            <th scope="col">Name</th>
+            <th scope="col">Office</th>
+            <th scope="col">Location</th>
+            <th scope="col">Election</th>
+            <th scope="col">Contributions</th>
+            <th scope="col">Expenditures</th>
         </tr>
     </thead>
-
     <tbody>
         <% @campaigns.each do |campaign| %>
             <tr>
-            <th scope="row"><%= link_to campaign.name, campaign %></th>
-            <th><%= campaign.office %></th>
-            <th><%= campaign.city %></th>
-            <th><%= campaign.election.title %></th>
-            <th>
-                <%= campaign.contributions_schedule_f_all if !campaign.campaign_reports[-1].blank? %>
-                <%= "NA" if campaign.campaign_reports[-1].blank? %>
-            </th>
-            <th>
-                <%= campaign.expenditures_schedule_f_all if !campaign.campaign_reports[-1].blank? %>
-                <%= "NA" if campaign.campaign_reports[-1].blank? %>
-            </th>
+                <th scope="row"><%= link_to campaign.name, campaign %></th>
+                    <td><%= campaign.office %></td>
+                    <td><%= campaign.city %></td>
+                    <td><%= campaign.election.title %></td>
+                    <td>
+                        <%= campaign.contributions_schedule_f_all if !campaign.campaign_reports[-1].blank? %>
+                        <%= "NA" if campaign.campaign_reports[-1].blank? %>
+                    </td>
+                    <td>
+                        <%= campaign.expenditures_schedule_f_all if !campaign.campaign_reports[-1].blank? %>
+                        <%= "NA" if campaign.campaign_reports[-1].blank? %>
+                    </td>
             </tr>
         <% end %>
     </tbody>
