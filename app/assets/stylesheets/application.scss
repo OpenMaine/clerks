@@ -52,7 +52,7 @@ label {
 }
 
 .sidebar-header {
-    padding: 15px 25px 33px 50px;
+    padding: 20px 20px 25px 40px;
 }
 
 .sidebar {
@@ -62,7 +62,17 @@ label {
     position: sticky;
     top: 0;
     background-color: rgba(216, 216, 216, 0.4);
+}
+
+.sidebar-nav-item {
+    font-size: 30px;
+    padding-bottom: 15px;
+}
+
+.list-unstyled-components {
+    list-style: none;
     padding: 25px;
+    padding-left: 45px;
 }
 
 a {
@@ -132,18 +142,6 @@ a {
 
 .table {
     min-width: 300px;
-}
-
-.list-unstyled-components {
-    list-style: none;
-    padding: 25px;
-    padding-left: 61px;
-    font-size: 36px;
-}
-
-.sidebar-nav-item {
-    font-size: 36px;
-    padding-bottom: 15px;
 }
 
 .candidate-header {
