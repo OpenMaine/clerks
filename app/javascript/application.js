@@ -3,11 +3,13 @@
 
 import "@hotwired/turbo-rails"
 import "controllers"
+import * as bootstrap from "bootstrap"
 
 //= require jquery
-//= rails-ujs
+//= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+//= require bootstrap
 
 console.log("hello")
