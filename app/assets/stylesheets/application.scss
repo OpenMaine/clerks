@@ -22,7 +22,7 @@ div.container {
 
 .wrapper {
     display: flex;
-    justify-content: left;
+    width: auto;
 }
 
 .form-group-large {
@@ -44,9 +44,6 @@ label {
 
 .main-campaigns {
     background-color: #FFFFFF;
-}
-
-.main {
     width: 100%;
 }
 
@@ -131,27 +128,43 @@ a {
     max-width: 275px;
 }
 
+td > a {
+    color: #212529;
+    &:hover {
+        color:#007C8A
+    }
+}
+
+.campaign-table-data {
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.campaign-table-header {
+    min-width: 100px;
+}
+
 .dropdown-toggle {
     height: 50px;
     min-width: 265px;
     background-color: rgba(216, 216, 216, 0.4);
     font-weight: 500;
     font-size: 17px;
-    border: 2px solid rgba(255,255,255,0);
+    border: 2px solid rgba(255, 255, 255, 0);
     border-right-width: 15px;
 
     &:hover {
         background-color: rgba(216, 216, 216, 0.4);
         color: #4a4a4a;
         font-weight: 500;
-        border-color: rgba(255,255,255,0);
+        border-color: rgba(255, 255, 255, 0);
     }
 
     &:focus {
         background-color: rgba(216, 216, 216, 0.4);
         color: #4a4a4a;
         font-weight: 500;
-        border-color: rgba(255,255,255,0);
+        border-color: rgba(255, 255, 255, 0);
     }
 
     &:active {
@@ -159,14 +172,14 @@ a {
             background-color: rgba(216, 216, 216, 0.4);
             color: #4a4a4a;
             font-weight: 500;
-            border-color: rgba(255,255,255,0);
+            border-color: rgba(255, 255, 255, 0);
         }
 
         &:focus {
             background-color: rgba(216, 216, 216, 0.4);
             color: #4a4a4a;
             font-weight: 500;
-            border-color: rgba(255,255,255,0);
+            border-color: rgba(255, 255, 255, 0);
         }
     }
 }
