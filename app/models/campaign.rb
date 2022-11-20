@@ -12,10 +12,6 @@ class Campaign < ApplicationRecord
     where("name LIKE ?", "%#{search}%")
   end
 
-  def format_money(amt)
-    "$#{amt/100}.#{"%.02d" % (amt%100)}"
-  end
-
   def expenditures_schedule_f_all
     sum = 0
 
@@ -23,7 +19,7 @@ class Campaign < ApplicationRecord
       sum += report.campaign_schedule_f.payments
     end
 
-    format_money(sum)
+    ApplicationController.helpers.format_money(sum)
   end
 
   def contributions_schedule_f_all
@@ -33,7 +29,7 @@ class Campaign < ApplicationRecord
       sum += report.campaign_schedule_f.receipts
     end
 
-    format_money(sum)
+    ApplicationController.helpers.format_money(sum)
   end
 
   def cash_contributions_all
@@ -47,7 +43,7 @@ class Campaign < ApplicationRecord
       end
     end
 
-    format_money(sum)
+    ApplicationController.helpers.format_money(sum)
   end
 
   def in_kind_contributions_all
@@ -61,7 +57,7 @@ class Campaign < ApplicationRecord
       end
     end
 
-    format_money(sum)
+    ApplicationController.helpers.format_money(sum)
   end
 
   def loan_balance_all
@@ -73,11 +69,11 @@ class Campaign < ApplicationRecord
       end
     end
 
-    format_money(sum)
+    ApplicationController.helpers.format_money(sum)
   end
 
   def most_recent_cash_balance
-    format_money(self.campaign_reports.order('report_type')[-1].campaign_schedule_f.balance) if !self.campaign_reports.order('report_type')[-1].campaign_schedule_f.nil?
+    ApplicationController.helpers.format_money(self.campaign_reports.order('report_type')[-1].campaign_schedule_f.balance) if !self.campaign_reports.order('report_type')[-1].campaign_schedule_f.nil?
   end
 
   def top_contributors_all
@@ -91,7 +87,7 @@ class Campaign < ApplicationRecord
 
     schedule_as_list = schedule_as_list.group_by(&:name).map do |name, items|
       {
-        amount: format_money(items.sum(&:amount)),
+        amount: ApplicationController.helpers.format_money(items.sum(&:amount)),
         name: name
       }
     end

@@ -1,29 +1,29 @@
 <table id="campaigns" class="table">
     <thead>
         <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Office</th>
-            <th scope="col">Location</th>
-            <th scope="col">Election</th>
-            <th scope="col">Contributions</th>
-            <th scope="col">Expenditures</th>
+            <th scope="col" class="campaign-table-header">Name</th>
+            <th scope="col" class="campaign-table-header">Office</th>
+            <th scope="col" class="campaign-table-header">Location</th>
+            <th scope="col" class="campaign-table-header">Election</th>
+            <th scope="col" class="campaign-table-header">Contributions</th>
+            <th scope="col" class="campaign-table-header">Expenditures</th>
         </tr>
     </thead>
     <tbody>
         <% @campaigns.each do |campaign| %>
             <tr>
-                <th scope="row"><%= link_to campaign.name, campaign, {:class => 'text-decoration-none'} %></th>
-                    <td><%= campaign.office %></td>
-                    <td><%= campaign.city %></td>
-                    <td><%= campaign.election.title %></td>
-                    <td>
-                        <%= campaign.contributions_schedule_f_all if !campaign.campaign_reports[-1].blank? %>
-                        <%= "NA" if campaign.campaign_reports[-1].blank? %>
-                    </td>
-                    <td>
-                        <%= campaign.expenditures_schedule_f_all if !campaign.campaign_reports[-1].blank? %>
-                        <%= "NA" if campaign.campaign_reports[-1].blank? %>
-                    </td>
+                <td scope="row"><%= link_to campaign.name, campaign, {:class => 'text-decoration-none campaign-table-data'} %></td>
+                <td class="campaign-table-data"><%= campaign.office %></td>
+                <td class="campaign-table-data"><%= campaign.city %></td>
+                <td class="campaign-table-data"><%= campaign.election.title %></td>
+                <td class="campaign-table-data">
+                    <%= campaign.contributions_schedule_f_all if !campaign.campaign_reports[-1].blank? %>
+                    <%= "NA" if campaign.campaign_reports[-1].blank? %>
+                </td>
+                <td class="campaign-table-data">
+                    <%= campaign.expenditures_schedule_f_all if !campaign.campaign_reports[-1].blank? %>
+                    <%= "NA" if campaign.campaign_reports[-1].blank? %>
+                </td>
             </tr>
         <% end %>
     </tbody>
