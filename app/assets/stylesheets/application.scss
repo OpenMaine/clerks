@@ -49,6 +49,10 @@ label {
 
 .sidebar-header {
     padding: 20px 20px 25px 40px;
+    &>a>svg {
+        width: 250px;
+        height: 86.5px;
+    }
 }
 
 .sidebar {
@@ -62,7 +66,28 @@ label {
 
 .sidebar-nav-item {
     font-size: 30px;
-    padding-bottom: 15px;
+    padding: 0px 0px 15px 10px;
+    &>a {
+        text-decoration: none;
+        &:hover {
+            color: #007C8A;
+            text-decoration: underline;
+        }
+    }
+}
+
+.active-custom.nav-link {
+    color: #007C8A;
+    &:hover {
+        color: #007C8A;
+    }
+}
+
+.nav-link {
+    color: #9B9B9B;
+    &:hover {
+        color: #007C8A;
+    }
 }
 
 .list-unstyled-components {
@@ -318,6 +343,14 @@ td > a {
     align-items: center;
     width: 300px;
     height: 80px;
+    color:#007C8A;
+    &>h3 {
+        color:#000000
+    }
+}
+
+.contributor-amount {
+    color:#007C8A;
 }
 
 .breadcrumb {

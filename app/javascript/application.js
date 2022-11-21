@@ -12,4 +12,4 @@ import * as bootstrap from "bootstrap"
 //= require_tree .
 //= require bootstrap
 
-console.log("hello")
+console.log("hello world")

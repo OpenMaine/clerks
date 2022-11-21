@@ -43,7 +43,6 @@ class CampaignReportsController < ApplicationController
 
     # Start iterating through and storing each row of the schedule A
     ss.sheet(1).parse(headers: true).each do |row|
-      # debugger
       if row["Amount"] != "Amount"
         a = report.campaign_schedule_as.build
         a.date = Chronic.parse(row["Date Received"])
