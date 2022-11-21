@@ -26,7 +26,7 @@
       <div class="container-fluid">
         <div class="row-fluid">
           <div class="span8">
-              <ul class="nav nav-tabs">
+              <ul class="nav nav-tabs card-header-tabs">
                   <li class="nav-item">
                     <%= link_to "Summary", @campaign, class: "nav-link"%>
                   </li>
@@ -34,7 +34,7 @@
                     <%= link_to "Filings", campaign_campaign_reports_path(@campaign.id), class: "nav-link" %>
                   </li>
                   <li class="nav-item active">
-                    <%= link_to "Contact", contact_campaign_path, class: "nav-link" %>
+                    <%= link_to "Contact", contact_campaign_path, class: "nav-link active-custom" %>
                   </li>
               </ul>
           </div>

@@ -76,6 +76,20 @@ label {
     }
 }
 
+.active-custom.nav-link {
+    color: #007C8A;
+    &:hover {
+        color: #007C8A;
+    }
+}
+
+.nav-link {
+    color: #9B9B9B;
+    &:hover {
+        color: #007C8A;
+    }
+}
+
 .list-unstyled-components {
     list-style: none;
     padding: 25px;
