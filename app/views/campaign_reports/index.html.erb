@@ -40,8 +40,16 @@
           </div>
         </div>
 
-        <div>
-          <div>
+        <hr>
+
+        <div class="card border-0 p-3">
+        <h3>Finance Reports: </h3>
+          <ul>
+            <% @campaign.campaign_reports.order('report_type').each do |report| %>
+              <li><%= link_to report.report_type, "https://drive.google.com/file/d/18CzbN7ABCq7iqXn8Kv7WR0SnJnEm6wo5/view?usp=sharing" %></li>
+            <% end %>
+          </ul>
+          <div class="p-4">
             <p>Upload new campaign finance report</p>
             <%= form_with url: campaign_campaign_reports_path(@campaign) do |form| %>
               <%= form.label :spreadsheet, "Finance Report" %>
@@ -49,23 +57,17 @@
               <%= form.submit "Submit" %>
             <% end %>
           </div>
-          <p>Finance Reports: </p>
-          <ul>
-            <% @campaign.campaign_reports.order('report_type').each do |report| %>
-              <li><%= link_to report.report_type, [@campaign, report] %></li>
-            <% end %>
-          </ul>
         </div>
 
-        <div>
-          <%= link_to "Edit this campaign", edit_campaign_path(@campaign) %> |
-          <%= link_to "Back to campaigns", campaigns_path %>
+<%# commented for demo purposes %>
+        <%# <div> %>
+          <%# <%= link_to "Edit this campaign", edit_campaign_path(@campaign) %> 
+          <%# | %>
+          <%# <%= link_to "Back to campaigns", campaigns_path %>
 
-          <%= button_to "Destroy this campaign", @campaign, method: :delete %>
-        </div>
+          <%# <%= button_to "Destroy this campaign", @campaign, method: :delete %>
+        <%# </div> %>
       </div>
-
-      <hr>
 
     </div>
 
