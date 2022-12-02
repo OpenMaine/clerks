@@ -46,7 +46,7 @@
         <h3>Finance Reports: </h3>
           <ul>
             <% @campaign.campaign_reports.order('report_type').each do |report| %>
-              <li><%= link_to report.report_type, "https://drive.google.com/file/d/18CzbN7ABCq7iqXn8Kv7WR0SnJnEm6wo5/view?usp=sharing" %></li>
+              <li><%= link_to report.report_type, [@campaign, report] %></li>
             <% end %>
           </ul>
           <div class="p-4">
