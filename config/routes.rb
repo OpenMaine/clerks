@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :contributions
+  resources :contributors
+  resources :committees
   resources :campaign_treasurers
   resources :campaigns do
     resources :campaign_reports do

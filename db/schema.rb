@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_23_224927) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_12_232707) do
   create_table "campaign_reports", force: :cascade do |t|
     t.integer "campaign_id", null: false
     t.integer "report_type"
@@ -108,6 +108,40 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_23_224927) do
     t.index ["election_id"], name: "index_campaigns_on_election_id"
   end
 
+  create_table "committees", force: :cascade do |t|
+    t.integer "election_id", null: false
+    t.string "name"
+    t.string "street"
+    t.string "city"
+    t.string "telephone"
+    t.string "email"
+    t.integer "office"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["election_id"], name: "index_committees_on_election_id"
+  end
+
+  create_table "contributions", force: :cascade do |t|
+    t.integer "contributor_id", null: false
+    t.integer "campaign_id", null: false
+    t.integer "committee_id", null: false
+    t.integer "amount"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["campaign_id"], name: "index_contributions_on_campaign_id"
+    t.index ["committee_id"], name: "index_contributions_on_committee_id"
+    t.index ["contributor_id"], name: "index_contributions_on_contributor_id"
+  end
+
+  create_table "contributors", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "zip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "elections", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
@@ -122,4 +156,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_23_224927) do
   add_foreign_key "campaign_schedule_fs", "campaign_reports"
   add_foreign_key "campaign_treasurers", "campaigns"
   add_foreign_key "campaigns", "elections"
+  add_foreign_key "committees", "elections"
+  add_foreign_key "contributions", "campaigns"
+  add_foreign_key "contributions", "committees"
+  add_foreign_key "contributions", "contributors"
 end

@@ -1,6 +1,8 @@
 class Campaign < ApplicationRecord
   belongs_to :election
   has_many :campaign_reports
+  has_many :contributions
+  has_many :contributors, through: :contributions
 
   enum :office, [:Mayor, :"City Council", :"School Board", :"Charter Commission"]
 
