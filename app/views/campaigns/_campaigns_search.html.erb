@@ -21,12 +21,6 @@
         <%= select_tag :election_filter, options_from_collection_for_select(Election.all, 'id', 'title'), {:class => 'btn btn-secondary dropdown-toggle filter-by-election', :prompt => 'Filter by Election'} %>
       </div>
     </div>
-    <%# <div class="dropdown dropdown-searchbar">
-      <div class="form-group-large text-left">
-        <label for="exampleFormControlSelect1">Location</label>
-        <%= select_tag :location_filter, options_from_collection_for_select(Campaign.select('distinct city'), 'city', 'city'), {:class => 'btn btn-secondary dropdown-toggle filter-by-city', :prompt => 'Filter by City'} %>
-      <%# </div> %>
-    <%# </div> %>
     <div class="input-group-append btn-search-container">
       <%= submit_tag "Search", class: "btn btn-primary btn-custom-color" %>
     </div>
