@@ -43,7 +43,7 @@ class Campaign < ApplicationRecord
 
     for report in self.campaign_reports.all do
       for schedule_a in report.campaign_schedule_as
-        unless !schedule_a.description.nil?
+        if !schedule_a.amount.nil?
           sum += schedule_a.amount
         end
       end
@@ -57,7 +57,7 @@ class Campaign < ApplicationRecord
 
     for report in self.campaign_reports.all do
       for schedule_a in report.campaign_schedule_as
-        unless schedule_a.description.nil?
+        if !schedule_a.amount.nil?
           sum += schedule_a.amount
         end
       end

@@ -9,6 +9,6 @@
 
 <div>
   <br />
-  <%= link_to "Back to campaign reports", campaign_path(@campaign_report.campaign) %>
+  <%= link_to "Back to campaign reports", campaign_campaign_reports_path(@campaign_report.campaign.id) %>
   <%= button_to "Destroy this campaign report", [@campaign_report.campaign, @campaign_report], method: :delete %>
 </div>

@@ -158,7 +158,11 @@ a {
     max-width: 275px;
 }
 
-td>a {
+td {
+    vertical-align: middle;
+}
+
+td>a:not(.campaign-report-link) {
     color: #212529;
 
     &:hover {
@@ -168,7 +172,7 @@ td>a {
 
 .campaign-table-data {
     font-size: 20px;
-    vertical-align: middle;
+    padding: 10px 0px 10px 0px !important;
 }
 
 .campaign-table-header {

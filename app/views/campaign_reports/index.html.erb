@@ -43,19 +43,39 @@
         <hr>
 
         <div class="card border-0 p-3">
-        <h3>Finance Reports: </h3>
-          <ul>
-            <% @campaign.campaign_reports.order('report_type').each do |report| %>
-              <li><%= link_to report.report_type, [@campaign, report] %></li>
-            <% end %>
-          </ul>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col" class="campaign-table-header">Report Name</th>
+                <th scope="col" class="campaign-table-header">Start Period</th>
+                <th scope="col" class="campaign-table-header">End Period</th>
+                <th scope="col" class="campaign-table-header">Due Date</th>
+                <th scope="col" class="campaign-table-header">Status</th>
+                <th scope="col" class="campaign-table-header">Filed Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @campaign.campaign_reports.order('report_type').each do |report| %>
+                <tr>
+                  <td scope="row"><%= link_to report.report_type, [@campaign, report], class: "campaign-report-link" %></td>
+                  <td class="campaign-table-data"></td>
+                  <td class="campaign-table-data"></td>
+                  <td class="campaign-table-data"></td>
+                  <td class="campaign-table-data"></td>
+                  <td class="campaign-table-data"><%= report.created_at.strftime("%Y-%m-%d") %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+
           <div class="p-4">
-            <p>Upload new campaign finance report</p>
-            <%= form_with url: campaign_campaign_reports_path(@campaign) do |form| %>
-              <%= form.label :spreadsheet, "Finance Report" %>
-              <%= form.file_field :spreadsheet, style: "display: block", accept: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" %>
-              <%= form.submit "Submit" %>
-            <% end %>
+              <p>Upload new campaign finance report</p>
+              <%= form_with url: campaign_campaign_reports_path(@campaign) do |form| %>
+                <%= form.label :spreadsheet, "Finance Report" %>
+                <%= form.file_field :spreadsheet, style: "display: block", accept: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" %>
+                <%= form.submit "Submit" %>
+              <% end %>
+
           </div>
         </div>
 
