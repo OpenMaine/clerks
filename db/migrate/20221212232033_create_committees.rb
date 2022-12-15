@@ -3,11 +3,19 @@ class CreateCommittees < ActiveRecord::Migration[7.0]
     create_table :committees do |t|
       t.references :election, null: false, foreign_key: true
       t.string :name
-      t.string :street
+      t.string :statement_of_committee_purpose
+      t.string :type
+      t.string :address
       t.string :city
-      t.string :telephone
+      t.string :zip
+      t.string :phone_number
       t.string :email
-      t.integer :office
+      t.string :treasurer_name
+      t.string :treasurer_address
+      t.string :treasurer_city
+      t.string :treasurer_zip
+      t.string :treasurer_phone_number
+      t.string :treasurer_email
 
       t.timestamps
     end

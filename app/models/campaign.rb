@@ -18,7 +18,9 @@ class Campaign < ApplicationRecord
     sum = 0
 
     for report in self.campaign_reports.all do
-      sum += report.campaign_schedule_f.payments
+      if !report.campaign_schedule_f.nil?
+        sum += report.campaign_schedule_f.payments
+      end
     end
 
     ApplicationController.helpers.format_money(sum)
@@ -28,7 +30,9 @@ class Campaign < ApplicationRecord
     sum = 0
 
     for report in self.campaign_reports.all do
-      sum += report.campaign_schedule_f.receipts
+      if !report.campaign_schedule_f.nil?
+        sum += report.campaign_schedule_f.receipts
+      end
     end
 
     ApplicationController.helpers.format_money(sum)

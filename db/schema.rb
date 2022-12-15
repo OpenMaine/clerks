@@ -111,11 +111,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_12_232707) do
   create_table "committees", force: :cascade do |t|
     t.integer "election_id", null: false
     t.string "name"
-    t.string "street"
+    t.string "statement_of_committee_purpose"
+    t.string "type"
+    t.string "address"
     t.string "city"
-    t.string "telephone"
+    t.string "zip"
+    t.string "phone_number"
     t.string "email"
-    t.integer "office"
+    t.string "treasurer_name"
+    t.string "treasurer_address"
+    t.string "treasurer_city"
+    t.string "treasurer_zip"
+    t.string "treasurer_phone_number"
+    t.string "treasurer_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["election_id"], name: "index_committees_on_election_id"

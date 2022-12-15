@@ -42,6 +42,7 @@ class CampaignReportsController < ApplicationController
     report.save
 
     # Start iterating through and storing each row of the schedule A
+    debugger
     ss.sheet(1).parse(headers: true).each do |row|
       if row["Amount"] != "Amount"
         a = report.campaign_schedule_as.build
