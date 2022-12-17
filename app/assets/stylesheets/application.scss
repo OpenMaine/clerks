@@ -25,6 +25,10 @@ div.container {
     width: auto;
 }
 
+.breadcrumb {
+    padding: 15px 15px 0 15px;
+}
+
 .form-group-large {
     font-size: 29px;
     font-weight: 700;
@@ -162,6 +166,10 @@ td {
     vertical-align: middle;
 }
 
+tbody > tr > td {
+    font-weight: 525;
+}
+
 td>a:not(.campaign-report-link) {
     color: #212529;
 
@@ -172,7 +180,17 @@ td>a:not(.campaign-report-link) {
 
 .campaign-table-data {
     font-size: 20px;
-    padding: 10px 0px 10px 0px !important;
+    padding: 20px 15px 20px 15px !important;
+}
+
+.report-type-header {
+    font-size: 25px;
+    font-weight: 700;
+    padding: 20px 0 0 10px;
+}
+
+.campaign-schedule-link {
+    padding: 10px;
 }
 
 .campaign-table-header {

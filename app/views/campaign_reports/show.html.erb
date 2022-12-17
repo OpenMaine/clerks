@@ -1,14 +1,31 @@
-<p style="color: green"><%= notice %></p>
+<div class="wrapper">
+  <%= render "shared/sidebar" %>
 
-<%= render @campaign_report %>
-<%= link_to "Schedule A", campaign_campaign_report_campaign_schedule_as_path(campaign_report_id: @campaign_report.id) %>
-<%= link_to "Schedule B", campaign_campaign_report_campaign_schedule_bs_path(campaign_report_id: @campaign_report.id) %>
-<%= link_to "Schedule C", campaign_campaign_report_campaign_schedule_cs_path(campaign_report_id: @campaign_report.id) %>
-<%= link_to "Schedule D", campaign_campaign_report_campaign_schedule_ds_path(campaign_report_id: @campaign_report.id) %>
-<%= link_to "Schedule F", campaign_campaign_report_campaign_schedule_fs_path(campaign_report_id: @campaign_report.id) %>
+  <div class="main">
 
-<div>
-  <br />
-  <%= link_to "Back to campaign reports", campaign_campaign_reports_path(@campaign_report.campaign.id) %>
-  <%= button_to "Destroy this campaign report", [@campaign_report.campaign, @campaign_report], method: :delete %>
+    <div class="content">
+      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item" aria-current="page">Campaigns</li>
+          <li class="breadcrumb-item" aria-current="page"><%= @campaign_report.campaign.name %></li>
+          <li class="breadcrumb-item active"><%= @campaign_report.report_type %></li>
+        </ol>
+      </nav>
+
+      <p style="color: green"><%= notice %></p>
+      <div class="p-2">
+        <%= render @campaign_report %>
+        <%= link_to "Schedule A", campaign_campaign_report_campaign_schedule_as_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
+        <%= link_to "Schedule B", campaign_campaign_report_campaign_schedule_bs_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
+        <%= link_to "Schedule C", campaign_campaign_report_campaign_schedule_cs_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
+        <%= link_to "Schedule D", campaign_campaign_report_campaign_schedule_ds_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
+        <%= link_to "Schedule F", campaign_campaign_report_campaign_schedule_fs_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
+      </div>
+      <div class="p-3">
+        <br />
+        <%= link_to "Back to campaign reports", campaign_campaign_reports_path(@campaign_report.campaign.id) %>
+        <%= button_to "Destroy this campaign report", [@campaign_report.campaign, @campaign_report], method: :delete, class: "border border-danger" %>
+      </div>
+    </div>
+  </div>
 </div>

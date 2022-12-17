@@ -1,22 +1,5 @@
 <div id="<%= dom_id campaign_report %>">
-  <p>
-    <strong>Campaign:</strong>
-    <%= campaign_report.campaign.name %>
+  <p class="report-type-header">
+    <strong><%= campaign_report.report_type %></strong>
   </p>
-  <p>
-    <strong>Election:</strong>
-    <%= campaign_report.campaign.election.title %>
-  </p>
-
-  <p>
-    <strong>Type:</strong>
-    <%= campaign_report.report_type %>
-  </p>
-
-  <p>
-    <h3>Totals</h3>
-    <%# this should never be null, but just in case %>
-    <%= render campaign_report.campaign_schedule_f if campaign_report.campaign_schedule_f%>
-  </p>
-
 </div>
