@@ -44,44 +44,53 @@
 
         <div class="campaign-summary-content p-3">
           <div class="financial-totals-box">
-            <h2>Financial Totals</h2>
+            <div class="summary-box-title">Financial Totals</div>
             <div class="financial-totals-container">
               <div class="financial-totals-content">
                 <h3>Cash Contributions</h3>
-                <%= campaign.cash_contributions_all if !campaign.campaign_reports[-1].blank? %>
-                <%= "NA" if campaign.campaign_reports[-1].blank? %>
+                <div class="financial-totals-variable">
+                  <%= campaign.cash_contributions_all if !campaign.campaign_reports[-1].blank? %>
+                  <%= "NA" if campaign.campaign_reports[-1].blank? %>
+                </div>
               </div>
               <div class="financial-totals-content">
                 <h3>In-Kind Contributions</h3>
-                <%= campaign.in_kind_contributions_all if !campaign.campaign_reports[-1].blank? %>
-                <%= "NA" if campaign.campaign_reports[-1].blank? %>
+                <div class="financial-totals-variable">
+                  <%= campaign.in_kind_contributions_all if !campaign.campaign_reports[-1].blank? %>
+                  <%= "NA" if campaign.campaign_reports[-1].blank? %>
+                </div>
               </div>
               <div class="financial-totals-content">
                 <h3>Expenditures</h3>
-                <%= campaign.expenditures_schedule_f_all if !campaign.campaign_reports[-1].blank? %>
-                <%= "NA" if campaign.campaign_reports[-1].blank? %>
+                <div class="financial-totals-variable">
+                  <%= campaign.expenditures_schedule_f_all if !campaign.campaign_reports[-1].blank? %>
+                  <%= "NA" if campaign.campaign_reports[-1].blank? %>
+                </div>
               </div>
               <div class="financial-totals-content">
                 <h3>Loans</h3>
-                <%= campaign.loan_balance_all if !campaign.campaign_reports[-1].blank? %>
-                <%= "NA" if campaign.campaign_reports[-1].blank? %>
+                <div class="financial-totals-variable">
+                  <%= campaign.loan_balance_all if !campaign.campaign_reports[-1].blank? %>
+                  <%= "NA" if campaign.campaign_reports[-1].blank? %>
+                </div>
               </div>
               <div class="financial-totals-content">
                 <h3>Cash-on-Hand</h3>
-                <%= campaign.most_recent_cash_balance if !campaign.campaign_reports[-1].blank? %>
-                <%= "NA" if campaign.campaign_reports[-1].blank? %>
+                <div class="financial-totals-variable">
+                  <%= campaign.most_recent_cash_balance if !campaign.campaign_reports[-1].blank? %>
+                  <%= "NA" if campaign.campaign_reports[-1].blank? %>
+                </div>
               </div>
             </div>
           </div>
 
           <div class="top-contributors-box">
-            <h2>Top Contributors</h2>
+            <div class="summary-box-title">Top Contributors</div>
             <div class="top-contributors-container">
               <ol>
               <% campaign.top_contributors_all.first(10).each do |contributor| %>
                 <li>
                   <%= contributor[:name] %>
-                  -
                   <span class="contributor-amount"><%= contributor[:amount] %></span>
                 </li>    
               <% end %>

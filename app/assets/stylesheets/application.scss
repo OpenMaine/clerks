@@ -25,6 +25,10 @@ div.container {
     width: auto;
 }
 
+.breadcrumb {
+    padding: 15px 15px 0 15px;
+}
+
 .form-group-large {
     font-size: 29px;
     font-weight: 700;
@@ -49,6 +53,7 @@ label {
 
 .sidebar-header {
     padding: 20px 20px 25px 40px;
+
     &>a>svg {
         width: 250px;
         height: 86.5px;
@@ -67,8 +72,10 @@ label {
 .sidebar-nav-item {
     font-size: 30px;
     padding: 0px 0px 15px 10px;
+
     &>a {
         text-decoration: none;
+
         &:hover {
             color: #007C8A;
             text-decoration: underline;
@@ -78,6 +85,7 @@ label {
 
 .active-custom.nav-link {
     color: #007C8A;
+
     &:hover {
         color: #007C8A;
     }
@@ -85,6 +93,7 @@ label {
 
 .nav-link {
     color: #9B9B9B;
+
     &:hover {
         color: #007C8A;
     }
@@ -153,20 +162,44 @@ a {
     max-width: 275px;
 }
 
-td > a {
+td {
+    vertical-align: middle;
+}
+
+tbody > tr > td {
+    font-weight: 525;
+}
+
+ul.schedule-instructions {
+    padding-left: 1.2rem;
+}
+
+td>a:not(.campaign-report-link) {
     color: #212529;
+
     &:hover {
-        color:#007C8A
+        color: #007C8A
     }
 }
 
 .campaign-table-data {
     font-size: 20px;
-    vertical-align: middle;
+    padding: 20px 15px 20px 15px !important;
+}
+
+.report-type-header {
+    font-size: 25px;
+    font-weight: 700;
+    padding: 20px 0 0 10px;
+}
+
+.campaign-schedule-link {
+    padding: 10px;
 }
 
 .campaign-table-header {
     min-width: 100px;
+    font-size: 18px;
 }
 
 .dropdown-toggle {
@@ -331,26 +364,55 @@ td > a {
     width: 50%;
 }
 
+.summary-box-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 49px;
+    padding-bottom: 35px;
+}
+
 .financial-totals-container {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-    gap: 2rem;
     align-content: center;
+}
+
+hr {
+    color: #9B9B9B;
 }
 
 .financial-totals-content {
     align-items: center;
     width: 300px;
-    height: 80px;
-    color:#007C8A;
-    &>h3 {
-        color:#000000
-    }
+    color: #007C8A;
+    margin-bottom: .85em;
+}
+
+.financial-totals-content > h3 {
+    color: #9B9B9B;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    margin-bottom: .1em;
+}
+
+.financial-totals-variable {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.top-contributors-container {
+    font-weight: 500;
+    font-size: 17px;
 }
 
 .contributor-amount {
-    color:#007C8A;
+    color: #007C8A;
+    float: right;
+    margin-left: 10px;
 }
 
 .breadcrumb {

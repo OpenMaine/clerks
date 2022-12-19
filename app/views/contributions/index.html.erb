@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Contributions</h1>
+
+<div id="contributions">
+  <% @contributions.each do |contribution| %>
+    <%= render contribution %>
+    <p>
+      <%= link_to "Show this contribution", contribution %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New contribution", new_contribution_path %>

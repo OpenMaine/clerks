@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  election: one
+  name: MyString
+  street: MyString
+  city: MyString
+  telephone: MyString
+  email: MyString
+  office: 1
+
+two:
+  election: two
+  name: MyString
+  street: MyString
+  city: MyString
+  telephone: MyString
+  email: MyString
+  office: 1

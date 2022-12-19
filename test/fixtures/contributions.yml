@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  contributor: one
+  campaign: one
+  committee: one
+  amount: 1
+  description: MyString
+
+two:
+  contributor: two
+  campaign: two
+  committee: two
+  amount: 1
+  description: MyString
