@@ -170,6 +170,10 @@ tbody > tr > td {
     font-weight: 525;
 }
 
+ul.schedule-instructions {
+    padding-left: 1.2rem;
+}
+
 td>a:not(.campaign-report-link) {
     color: #212529;
 
@@ -195,6 +199,7 @@ td>a:not(.campaign-report-link) {
 
 .campaign-table-header {
     min-width: 100px;
+    font-size: 18px;
 }
 
 .dropdown-toggle {
@@ -362,7 +367,7 @@ td>a:not(.campaign-report-link) {
 .summary-box-title {
     font-style: normal;
     font-weight: 700;
-    font-size: 36px;
+    font-size: 30px;
     line-height: 49px;
     padding-bottom: 35px;
 }
@@ -389,19 +394,19 @@ hr {
     color: #9B9B9B;
     font-style: normal;
     font-weight: 500;
-    font-size: 30px;
+    font-size: 25px;
     margin-bottom: .1em;
 }
 
 .financial-totals-variable {
     font-style: normal;
     font-weight: 600;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .top-contributors-container {
     font-weight: 500;
-    font-size: 20px;
+    font-size: 17px;
 }
 
 .contributor-amount {

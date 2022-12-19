@@ -1,58 +1,9 @@
-<div id="<%= dom_id campaign_schedule_a %>">
-  <p>
-    <strong>Date:</strong>
-    <%= campaign_schedule_a.date %>
-  </p>
+<tr id="<%= dom_id campaign_schedule_a %>">
+  <td scope="row"><%= campaign_schedule_a.date %></td>
 
-  <p>
-    <strong>Name:</strong>
-    <%= campaign_schedule_a.name %>
-  </p>
-
-  <p>
-    <strong>Address:</strong>
-    <%= campaign_schedule_a.address %>
-  </p>
-
-  <p>
-    <strong>City:</strong>
-    <%= campaign_schedule_a.city %>
-  </p>
-
-  <p>
-    <strong>State:</strong>
-    <%= campaign_schedule_a.state %>
-  </p>
-
-  <p>
-    <strong>Zip:</strong>
-    <%= campaign_schedule_a.zip %>
-  </p>
-
-  <p>
-    <strong>Occupation:</strong>
-    <%= campaign_schedule_a.occupation %>
-  </p>
-
-  <p>
-    <strong>Employer:</strong>
-    <%= campaign_schedule_a.employer %>
-  </p>
-
-  <p>
-    <strong>Type:</strong>
-    <%= campaign_schedule_a.schedule_a_type %>
-  </p>
-
-  <p>
-    <strong>Amount:</strong>
-    <%= format_money(campaign_schedule_a.amount) %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= campaign_schedule_a.description %>
-  </p>
-  <hr />
-
-</div>
+  <td class="campaign-table-data"><%= campaign_schedule_a.name %><BR><%= campaign_schedule_a.address %><BR><%= campaign_schedule_a.city %><%= campaign_schedule_a.state ? ", " : "" %><%= campaign_schedule_a.state %> <%= campaign_schedule_a.zip %></td>
+  <td class="campaign-table-data"><%= campaign_schedule_a.occupation %></td>
+  <td class="campaign-table-data"><%= campaign_schedule_a.employer %></td>
+  <td class="campaign-table-data"><%= campaign_schedule_a.schedule_a_type %></td>
+  <td class="campaign-table-data"><%= format_money(campaign_schedule_a.amount) %></td>
+</tr>
