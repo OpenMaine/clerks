@@ -1,13 +1,59 @@
-<p style="color: green"><%= notice %></p>
+<div class="wrapper">
+  <%= render "shared/sidebar" %>
 
-<p>
-  <strong>Campaign:</strong>
-  <%= @campaign_report.campaign.name %>
-</p>
+  <div class="main">
 
+    <div class="content">
+      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item" aria-current="page">Campaigns</li>
+          <li class="breadcrumb-item" aria-current="page"><%= @campaign_report.campaign.name %></li>
+          <li class="breadcrumb-item active"><%= @campaign_report.report_type %></li>
+        </ol>
+      </nav>
 
-<h3>Campaign Schedule A</h3>
-<div id="campaign_schedule_as">
-  <%= render @campaign_schedule_as %>
+      <p style="color: green"><%= notice %></p>
+      <div class="p-2">
+        <%= render @campaign_report %>
+        <%= link_to "Schedule A", campaign_campaign_report_campaign_schedule_as_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
+        <%= link_to "Schedule B", campaign_campaign_report_campaign_schedule_bs_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
+        <%= link_to "Schedule C", campaign_campaign_report_campaign_schedule_cs_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
+        <%= link_to "Schedule D", campaign_campaign_report_campaign_schedule_ds_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
+        <%= link_to "Schedule F", campaign_campaign_report_campaign_schedule_fs_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
+      </div>
+
+      <div class="p-3 schedule-display">
+        <div class="h3 py-3"><strong>Schedule A: Cash Contributions</strong></div>
+        <ul class="schedule-instructions">
+          <li>Itemize all cash contributions from contributors who have given you more than $50 in this report period. Both cash and in-kind contributions count toward the $50 threshold.</li>
+          <li>Report the occupation and employer for individual contributors who contributed more than $50 in this report period. If you requested employment information but did not receive it, write “information requested.”</li>
+          <li>Cash contributions of $50 or less may be aggregated and reported as a lump sum. Use “Contributors giving $50 or less” as the contributor type.</li>
+          <li>If you transferred surplus funds from a previous campaign to your current campaign, report that amount in the first report for the current election cycle.,</li>
+          <li><strong>Total contributions from the same source (except candidate and candidate’s spouse/domestic partner) may NOT exceed $500 in any election for municipal office.</strong></li>
+        </ul>
+
+        <table id="campaigns" class="table">
+            <thead>
+                <tr>
+                    <th scope="col" class="campaign-table-header">Name</th>
+                    <th scope="col" class="campaign-table-header">Name, Address, Zip</th>
+                    <th scope="col" class="campaign-table-header">Occupation</th>
+                    <th scope="col" class="campaign-table-header">Employer</th>
+                    <th scope="col" class="campaign-table-header">Type</th>
+                    <th scope="col" class="campaign-table-header">Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+              <%= render @campaign_report.campaign_schedule_as %>
+            </tbody>
+        </table>
+      </div>
+
+      <div class="p-3">
+        <br />
+        <%= link_to "Back to campaign reports", campaign_campaign_reports_path(@campaign_report.campaign.id) %>
+        <%= button_to "Destroy this campaign report", [@campaign_report.campaign, @campaign_report], method: :delete, class: "border border-danger" %>
+      </div>
+    </div>
+  </div>
 </div>
-<%= link_to "Back to campaign report", campaign_campaign_report_path(id: @campaign_report) %>
