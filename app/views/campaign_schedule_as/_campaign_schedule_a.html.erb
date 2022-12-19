@@ -1,7 +1,11 @@
 <tr id="<%= dom_id campaign_schedule_a %>">
   <td scope="row"><%= campaign_schedule_a.date %></td>
 
-  <td class="campaign-table-data"><%= campaign_schedule_a.name %><BR><%= campaign_schedule_a.address %><BR><%= campaign_schedule_a.city %><%= campaign_schedule_a.state ? ", " : "" %><%= campaign_schedule_a.state %> <%= campaign_schedule_a.zip %></td>
+  <td class="campaign-table-data"><%= campaign_schedule_a.name %>
+  <% if campaign_schedule_a.address %>
+    <BR><%= campaign_schedule_a.address %><BR><%= campaign_schedule_a.city %><%= campaign_schedule_a.state ? ", " : "" %><%= campaign_schedule_a.state %><%= campaign_schedule_a.state ? " " : "" %><%= campaign_schedule_a.zip %>
+  <% end %>
+  </td>
   <td class="campaign-table-data"><%= campaign_schedule_a.occupation %></td>
   <td class="campaign-table-data"><%= campaign_schedule_a.employer %></td>
   <td class="campaign-table-data"><%= campaign_schedule_a.schedule_a_type %></td>
