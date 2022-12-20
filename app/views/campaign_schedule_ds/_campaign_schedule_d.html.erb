@@ -1,25 +1,6 @@
-<div id="<%= dom_id campaign_schedule_d %>">
-
-  <p>
-    <strong>Creditor:</strong>
-    <%= campaign_schedule_d.creditor %>
-  </p>
-
-  <p>
-    <strong>Purpose:</strong>
-    <%= campaign_schedule_d.purpose %>
-  </p>
-
-  <p>
-    <strong>Amount:</strong>
-    <%= campaign_schedule_d.amount %>
-  </p>
-
-  <p>
-    <strong>Campaign:</strong>
-    <%= campaign_schedule_d.campaign_id %>
-  </p>
-
-  <hr />
-
-</div>
+<tr id="<%= dom_id campaign_schedule_d %>">
+  <td scope="row"><%= campaign_schedule_d.date %></td>
+  <td class="campaign-table-data"><%= campaign_schedule_d.creditor %></td>
+  <td class="campaign-table-data"><%= campaign_schedule_d.purpose %></td>
+  <td class="campaign-table-data"><%= format_money(campaign_schedule_d.amount) %></td>
+</tr>

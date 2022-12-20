@@ -1,34 +1,8 @@
-<div id="<%= dom_id campaign_schedule_c %>">
-  <p>
-    <strong>Lender:</strong>
-    <%= campaign_schedule_c.lender %>
-  </p>
-
-  <p>
-    <strong>Balance at beginning:</strong>
-    <%= campaign_schedule_c.balance_at_beginning %>
-  </p>
-
-  <p>
-    <strong>Amount loaned:</strong>
-    <%= campaign_schedule_c.amount_loaned %>
-  </p>
-
-  <p>
-    <strong>Amount repaid:</strong>
-    <%= campaign_schedule_c.amount_repaid %>
-  </p>
-
-  <p>
-    <strong>Amount forgiven:</strong>
-    <%= campaign_schedule_c.amount_forgiven %>
-  </p>
-
-  <p>
-    <strong>Balance:</strong>
-    <%= campaign_schedule_c.balance %>
-  </p>
-
-  <hr />
-
-</div>
+<tr id="<%= dom_id campaign_schedule_c %>">
+  <td scope="row"><%= campaign_schedule_c.lender %></td>
+  <td class="campaign-table-data"><%= format_money(campaign_schedule_c.balance_at_beginning) %></td>
+  <td class="campaign-table-data"><%= format_money(campaign_schedule_c.amount_loaned) %></td>
+  <td class="campaign-table-data"><%= format_money(campaign_schedule_c.amount_repaid) %></td>
+  <td class="campaign-table-data"><%= format_money(campaign_schedule_c.amount_forgiven) %></td>
+  <td class="campaign-table-data"><%= format_money(campaign_schedule_c.balance) %></td>
+</tr>

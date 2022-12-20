@@ -1,17 +1,5 @@
-<div id="<%= dom_id campaign_schedule_f %>">
-  <p>
-    <strong>Receipts:</strong>
-    <%= format_money(campaign_schedule_f.receipts) if campaign_schedule_f.receipts != nil %>
-  </p>
-
-  <p>
-    <strong>Payments:</strong>
-    <%= format_money(campaign_schedule_f.payments) if campaign_schedule_f.payments != nil %>
-  </p>
-
-  <p>
-    <strong>Balance:</strong>
-    <%= format_money(campaign_schedule_f.balance) if campaign_schedule_f.balance != nil %>
-  </p>
-
-</div>
+<tr id="<%= dom_id campaign_schedule_f %>">
+  <td scope="row"><%= format_money(campaign_schedule_f.receipts) %></td>
+  <td class="campaign-table-data"><%= format_money(campaign_schedule_f.payments) %></td>
+  <td class="campaign-table-data"><%= format_money(campaign_schedule_f.balance) %></td>
+</tr>

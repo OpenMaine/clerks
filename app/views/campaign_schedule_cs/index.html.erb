@@ -1,9 +1,58 @@
-<p style="color: green"><%= notice %></p>
+<div class="wrapper">
+  <%= render "shared/sidebar" %>
 
-<h1>Campaign schedule C</h1>
+  <div class="main">
 
-<div id="campaign_schedule_cs">
-  <%= render @campaign_schedule_cs %>
+    <div class="content">
+      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item" aria-current="page">Campaigns</li>
+          <li class="breadcrumb-item" aria-current="page"><%= @campaign_report.campaign.name %></li>
+          <li class="breadcrumb-item active"><%= @campaign_report.report_type %></li>
+        </ol>
+      </nav>
+
+      <p style="color: green"><%= notice %></p>
+      <div class="p-2">
+        <%= render @campaign_report %>
+        <%= link_to "Schedule A", campaign_campaign_report_campaign_schedule_as_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
+        <%= link_to "Schedule B", campaign_campaign_report_campaign_schedule_bs_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
+        <%= link_to "Schedule C", campaign_campaign_report_campaign_schedule_cs_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
+        <%= link_to "Schedule D", campaign_campaign_report_campaign_schedule_ds_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
+        <%= link_to "Schedule F", campaign_campaign_report_campaign_schedule_fs_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
+      </div>
+
+      <div class="p-3 schedule-display">
+        <div class="h3 py-3"><strong>Schedule C: Loans and Loans Repayments</strong></div>
+        <ul class="schedule-instructions">
+          <li>List all new and continuing loans that were unpaid at any time during this reporting period.</li>
+          <li>If a loan amount is forgiven, the amount forgiven must also be entered as a contribution on Schedule A.</li>
+          <li>Loans cannot exceed $775 in any election for municipal candidates, except loans made by the candidate, the candidate’s spouse or domestic partner, or a financial institution in the State of Maine</li>
+          <li>Duplicate as needed.</li>
+        </ul>
+
+        <table id="campaigns" class="table">
+            <thead>
+                <tr>
+                    <th scope="col" class="campaign-table-header">Lender Name, Address, Zip</th>
+                    <th scope="col" class="campaign-table-header">Loan Balance at Beginning of Period</th>
+                    <th scope="col" class="campaign-table-header">Amount Loaned this Period</th>
+                    <th scope="col" class="campaign-table-header">Amount Repaid this Period</th>
+                    <th scope="col" class="campaign-table-header">Amount Forgiven this Period</th>
+                    <th scope="col" class="campaign-table-header">Loan Balance at End of Period</th>
+                </tr>
+            </thead>
+            <tbody>
+              <%= render @campaign_report.campaign_schedule_cs %>
+            </tbody>
+        </table>
+      </div>
+
+      <div class="p-3">
+        <br />
+        <%= link_to "Back to campaign reports", campaign_campaign_reports_path(@campaign_report.campaign.id) %>
+        <%# <%= button_to "Destroy this campaign report", [@campaign_report.campaign, @campaign_report], method: :delete, class: "border border-danger" %>
+      </div>
+    </div>
+  </div>
 </div>
-
-<%= link_to "Back to campaign report", campaign_campaign_report_path(id: @campaign_report) %>
