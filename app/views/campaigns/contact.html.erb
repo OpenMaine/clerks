@@ -43,22 +43,28 @@
         <hr>
 
         <div class="campaign-contact-content p-3">
-            <div class="campaign-contact-box">
-                <h2>Contact</h2>
-                <div class="campaign-contact-container">
-                <div>
-                    <h3>Address</h3>
-                    <%= @campaign.street %>
-                    <%= @campaign.city %>
-                </div>
-                <div>
-                    <h3>Phone</h3>
-                    <%= @campaign.telephone %>
-                </div>
-                <div>
-                    <h3>Email</h3>
-                    <%= @campaign.email %>
-                </div>
+            <div class="financial-totals-box">
+                <div class="summary-box-title">Contact</div>
+                <div class="financial-totals-container">
+                  <div class="financial-totals-content">
+                      <h3>Address</h3>
+                      <div class="financial-totals-variable">
+                        <%= @campaign.street %>
+                        <%= @campaign.city %>
+                      </div>
+                  </div>
+                  <div class="financial-totals-content">
+                      <h3>Phone</h3>
+                      <div class="financial-totals-variable">
+                        <%= @campaign.telephone %>
+                      </div>
+                  </div>
+                  <div class="financial-totals-content">
+                      <h3>Email</h3>
+                      <div class="financial-totals-variable">
+                        <%= @campaign.email %>
+                      </div>
+                  </div>
                 </div>
             </div>
             </div>
