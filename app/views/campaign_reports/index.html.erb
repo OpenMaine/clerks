@@ -68,13 +68,13 @@
             </tbody>
           </table>
 
-          <div class="p-4 border border-danger">
-              <p>Upload new campaign finance report</p>
-              <%= form_with url: campaign_campaign_reports_path(@campaign) do |form| %>
-                <%= form.label :spreadsheet, "Finance Report" %>
-                <%= form.file_field :spreadsheet, style: "display: block", accept: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" %>
-                <%= form.submit "Submit" %>
-              <% end %>
+          <%# <div class="p-4 border border-danger"> %>
+              <%# <p>Upload new campaign finance report</p> %>
+              <%# <%= form_with url: campaign_campaign_reports_path(@campaign) do |form| %>
+                <%# <%= form.label :spreadsheet, "Finance Report" %>
+                <%# <%= form.file_field :spreadsheet, style: "display: block", accept: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" %>
+                <%# <%= form.submit "Submit" %>
+              <%# <% end %>
 
           </div>
         </div>

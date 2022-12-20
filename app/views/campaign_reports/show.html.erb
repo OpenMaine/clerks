@@ -38,7 +38,6 @@
                     <th scope="col" class="campaign-table-header">Date</th>
                     <th scope="col" class="campaign-table-header">Name, Address, Zip</th>
                     <th scope="col" class="campaign-table-header">Occupation</th>
-                    <th scope="col" class="campaign-table-header">Employer</th>
                     <th scope="col" class="campaign-table-header">Type</th>
                     <th scope="col" class="campaign-table-header">Amount</th>
                 </tr>
@@ -52,7 +51,7 @@
       <div class="p-3">
         <br />
         <%= link_to "Back to campaign reports", campaign_campaign_reports_path(@campaign_report.campaign.id) %>
-        <%= button_to "Destroy this campaign report", [@campaign_report.campaign, @campaign_report], method: :delete, class: "border border-danger" %>
+        <%# <%= button_to "Destroy this campaign report", [@campaign_report.campaign, @campaign_report], method: :delete, class: "border border-danger" %>
       </div>
     </div>
   </div>

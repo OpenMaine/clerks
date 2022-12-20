@@ -1,29 +1,7 @@
-<div id="<%= dom_id campaign_schedule_b %>">
-  <p>
-    <strong>Date:</strong>
-    <%= campaign_schedule_b.date %>
-  </p>
-
-  <p>
-    <strong>Payee:</strong>
-    <%= campaign_schedule_b.payee %>
-  </p>
-
-  <p>
-    <strong>Type:</strong>
-    <%= campaign_schedule_b.schedule_b_type %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= campaign_schedule_b.description %>
-  </p>
-
-  <p>
-    <strong>Amount:</strong>
-    <%= format_money(campaign_schedule_b.amount) %>
-  </p>
-
-  <hr />
-
-</div>
+<tr id="<%= dom_id campaign_schedule_b %>">
+  <td scope="row"><%= campaign_schedule_b.date %></td>
+  <td class="campaign-table-data"><%= campaign_schedule_b.payee %></td>
+  <td class="campaign-table-data"><%= campaign_schedule_b.schedule_b_type %>: <%= campaign_schedule_b.type_description %></td>
+  <td class="campaign-table-data"><%= campaign_schedule_b.description %></td>
+  <td class="campaign-table-data"><%= format_money(campaign_schedule_b.amount) %></td>
+</tr>

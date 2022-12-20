@@ -1,10 +1,53 @@
-<p style="color: green"><%= notice %></p>
+<div class="wrapper">
+  <%= render "shared/sidebar" %>
 
-<h1>Campaign schedule F</h1>
+  <div class="main">
 
-<div id="campaign_schedule_fs">
-  <%# this should never be null, but just in case %>
-  <%= render @campaign_schedule_f if @campaign_schedule_f %>
+    <div class="content">
+      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item" aria-current="page">Campaigns</li>
+          <li class="breadcrumb-item" aria-current="page"><%= @campaign_report.campaign.name %></li>
+          <li class="breadcrumb-item active"><%= @campaign_report.report_type %></li>
+        </ol>
+      </nav>
+
+      <p style="color: green"><%= notice %></p>
+      <div class="p-2">
+        <%= render @campaign_report %>
+        <%= link_to "Schedule A", campaign_campaign_report_campaign_schedule_as_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
+        <%= link_to "Schedule B", campaign_campaign_report_campaign_schedule_bs_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
+        <%= link_to "Schedule C", campaign_campaign_report_campaign_schedule_cs_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
+        <%= link_to "Schedule D", campaign_campaign_report_campaign_schedule_ds_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
+        <%= link_to "Schedule F", campaign_campaign_report_campaign_schedule_fs_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
+      </div>
+
+      <div class="p-3 schedule-display">
+        <div class="h3 py-3"><strong>Schedule F: Summary Schedule</strong></div>
+        <ul class="schedule-instructions">
+          <li>This page is required for all candidates except those checking no activity at the beginning.</li>
+          <li>The cash balance on line 14 must match the campaign’s reconciled bank account balance as of the last day of the report period.</li>
+        </ul>
+
+        <table id="campaigns" class="table">
+            <thead>
+                <tr>
+                    <th scope="col" class="campaign-table-header">Receipts</th>
+                    <th scope="col" class="campaign-table-header">Expenditure</th>
+                    <th scope="col" class="campaign-table-header">Cash Summary</th>
+                </tr>
+            </thead>
+            <tbody>
+              <%= render @campaign_report.campaign_schedule_f %>
+            </tbody>
+        </table>
+      </div>
+
+      <div class="p-3">
+        <br />
+        <%= link_to "Back to campaign reports", campaign_campaign_reports_path(@campaign_report.campaign.id) %>
+        <%# <%= button_to "Destroy this campaign report", [@campaign_report.campaign, @campaign_report], method: :delete, class: "border border-danger" %>
+      </div>
+    </div>
+  </div>
 </div>
-
-<%= link_to "Back to campaign report", campaign_campaign_report_path(id: @campaign_report) %>
