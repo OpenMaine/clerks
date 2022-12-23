@@ -1,0 +1,13 @@
+<tr id="<%= dom_id campaign_schedule_a1 %>">
+  <td scope="row"><%= campaign_schedule_a1.date %></td>
+
+  <td class="campaign-table-data"><%= campaign_schedule_a1.name %>
+  <% if campaign_schedule_a1.address %>
+    <BR><%= campaign_schedule_a1.address %><BR><%= campaign_schedule_a1.city %><%= campaign_schedule_a1.state ? ", " : "" %><%= campaign_schedule_a1.state %><%= campaign_schedule_a1.state ? " " : "" %><%= campaign_schedule_a1.zip %>
+  <% end %>
+  </td>
+  <td class="campaign-table-data"><%= campaign_schedule_a1.occupation %></td>
+  <td class="campaign-table-data"><%= campaign_schedule_a1.schedule_a1_type %>: <%= campaign_schedule_a1.type_description %></td>
+  <td class="campaign-table-data"><%= format_money(campaign_schedule_a1.amount) %></td>
+  <td class="campaign-table-data"><%= campaign_schedule_a1.description %></td>
+</tr>

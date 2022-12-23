@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  campaign_report: one
+  date: 2022-12-23
+  name: MyString
+  address: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  occupation: MyString
+  employer: MyString
+  schedule_a1_type: 1
+  amount: 1
+  description: MyString
+
+two:
+  campaign_report: two
+  date: 2022-12-23
+  name: MyString
+  address: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  occupation: MyString
+  employer: MyString
+  schedule_a1_type: 1
+  amount: 1
+  description: MyString

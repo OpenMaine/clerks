@@ -67,18 +67,19 @@ class CampaignReportsController < ApplicationController
     # Start iterating through and storing each row of the schedule A1's
     # A1's are essentially A's but with a description (for in kind goods)
     ss.sheet(2).parse().each do |row|
-      a = report.campaign_schedule_as.build
-      a.date = Chronic.parse(row[0])
-      a.name = row[1]
-      a.address = row[2]
-      a.city = row[3]
-      a.state = row[4]
-      a.zip = row[5]
-      a.occupation = row[6]
-      a.schedule_a_type = row[8]
-      a.amount = process_money(row[9])
-      a.description = row[10]
-      a.save
+      a1 = report.campaign_schedule_a1s.build
+      a1.date = Chronic.parse(row[0])
+      a1.name = row[1]
+      a1.address = row[2]
+      a1.city = row[3]
+      a1.state = row[4]
+      a1.zip = row[5]
+      a1.occupation = row[6]
+      a1.employer = row[7]
+      a1.schedule_a1_type = row[8]
+      a1.amount = process_money(row[9])
+      a1.description = row[10]
+      a1.save
     end
 
     # Start iterating through and storing each row of the schedule B's
@@ -144,6 +145,7 @@ class CampaignReportsController < ApplicationController
   def destroy
     campaign = @campaign_report.campaign
     CampaignScheduleA.where(campaign_report_id: @campaign_report.id).destroy_all
+    CampaignScheduleA1.where(campaign_report_id: @campaign_report.id).destroy_all
     CampaignScheduleB.where(campaign_report_id: @campaign_report.id).destroy_all
     CampaignScheduleC.where(campaign_report_id: @campaign_report.id).destroy_all
     CampaignScheduleD.where(campaign_report_id: @campaign_report.id).destroy_all

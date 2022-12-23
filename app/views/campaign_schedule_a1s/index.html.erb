@@ -16,6 +16,7 @@
       <div class="p-2">
         <%= render @campaign_report %>
         <%= link_to "Schedule A", campaign_campaign_report_campaign_schedule_as_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
+        <%= link_to "Schedule A-1", campaign_campaign_report_campaign_schedule_a1s_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
         <%= link_to "Schedule B", campaign_campaign_report_campaign_schedule_bs_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
         <%= link_to "Schedule C", campaign_campaign_report_campaign_schedule_cs_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
         <%= link_to "Schedule D", campaign_campaign_report_campaign_schedule_ds_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
@@ -23,13 +24,14 @@
       </div>
 
       <div class="p-3 schedule-display">
-        <div class="h3 py-3"><strong>Schedule A: Cash Contributions</strong></div>
+        <div class="h3 py-3"><strong>Schedule A-1: In-Kind Contributions</strong></div>
         <ul class="schedule-instructions">
-          <li>Itemize all cash contributions from contributors who have given you more than $50 in this report period. Both cash and in-kind contributions count toward the $50 threshold.</li>
+          <li>Itemize all in-kind contributions from contributors who have given you contributions totaling more than $50 in this report period. Both cash and in-kind contributions count toward the $50 threshold.</li>
           <li>Report the occupation and employer for individual contributors who contributed more than $50 in this report period. If you requested employment information but did not receive it, write “information requested.”</li>
-          <li>Cash contributions of $50 or less may be aggregated and reported as a lump sum. Use “Contributors giving $50 or less” as the contributor type.</li>
-          <li>If you transferred surplus funds from a previous campaign to your current campaign, report that amount in the first report for the current election cycle.,</li>
-          <li><strong>Total contributions from the same source (except candidate and candidate’s spouse/domestic partner) may NOT exceed $500 in any election for municipal office.</strong></li>
+          <li>In-kind contributions of $50 or less may be aggregated and reported as a lump sum. Use “Contributors giving $50 or less” as the contributor type.</li>
+          <li>If you received goods or services for less than the usual and customary charge, report the amount of the discount as an in-kind contribution.</li>
+          <li>A description of the goods or services received is required.</li>
+          <li><strong>Total contributions (cash and in-kind) from the same source (except candidate and candidate’s spouse/domestic partner) may NOT exceed $500 in any election for municipal office.</strong></li>
         </ul>
 
         <table id="campaigns" class="table">
@@ -40,10 +42,11 @@
                     <th scope="col" class="campaign-table-header">Occupation</th>
                     <th scope="col" class="campaign-table-header">Type</th>
                     <th scope="col" class="campaign-table-header">Amount</th>
+                    <th scope="col" class="campaign-table-header">Description</th>
                 </tr>
             </thead>
             <tbody>
-              <%= render @campaign_report.campaign_schedule_as %>
+              <%= render @campaign_report.campaign_schedule_a1s %>
             </tbody>
         </table>
       </div>

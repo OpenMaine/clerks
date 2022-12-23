@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :campaigns do
     resources :campaign_reports do
       resources :campaign_schedule_as
+      resources :campaign_schedule_a1s
       resources :campaign_schedule_bs
       resources :campaign_schedule_cs
       resources :campaign_schedule_ds

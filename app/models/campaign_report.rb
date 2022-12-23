@@ -1,6 +1,7 @@
 class CampaignReport < ApplicationRecord
   belongs_to :campaign
   has_many :campaign_schedule_as
+  has_many :campaign_schedule_a1s
   has_many :campaign_schedule_bs
   has_many :campaign_schedule_cs
   has_many :campaign_schedule_ds

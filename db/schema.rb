@@ -10,13 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_12_232707) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_23_181426) do
   create_table "campaign_reports", force: :cascade do |t|
     t.integer "campaign_id", null: false
     t.integer "report_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["campaign_id"], name: "index_campaign_reports_on_campaign_id"
+  end
+
+  create_table "campaign_schedule_a1s", force: :cascade do |t|
+    t.date "date"
+    t.string "name"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.string "occupation"
+    t.string "employer"
+    t.integer "schedule_a1_type"
+    t.integer "amount"
+    t.string "description"
+    t.integer "campaign_report_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["campaign_report_id"], name: "index_campaign_schedule_a1s_on_campaign_report_id"
   end
 
   create_table "campaign_schedule_as", force: :cascade do |t|
@@ -157,6 +175,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_12_232707) do
   end
 
   add_foreign_key "campaign_reports", "campaigns"
+  add_foreign_key "campaign_schedule_a1s", "campaign_reports"
   add_foreign_key "campaign_schedule_as", "campaign_reports"
   add_foreign_key "campaign_schedule_bs", "campaign_reports"
   add_foreign_key "campaign_schedule_cs", "campaign_reports"
