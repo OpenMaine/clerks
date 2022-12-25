@@ -16,6 +16,7 @@
       <div class="p-2">
         <%= render @campaign_report %>
         <%= link_to "Schedule A", campaign_campaign_report_campaign_schedule_as_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
+        <%= link_to "Schedule A-1", campaign_campaign_report_campaign_schedule_a1s_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
         <%= link_to "Schedule B", campaign_campaign_report_campaign_schedule_bs_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
         <%= link_to "Schedule C", campaign_campaign_report_campaign_schedule_cs_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
         <%= link_to "Schedule D", campaign_campaign_report_campaign_schedule_ds_path(campaign_report_id: @campaign_report.id), class: "campaign-schedule-link" %>
