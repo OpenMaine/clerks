@@ -1,4 +1,4 @@
-<%= form_with(model: [campaign, campaign_report]) do |form| %>
+<%= form_with url: campaign_campaign_reports_path do |form| %>
   <% if campaign_report.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(campaign_report.errors.count, "error") %> prohibited this campaign_report from being saved:</h2>
@@ -11,17 +11,8 @@
     </div>
   <% end %>
 
-  <div>
-    <strong>Campaign: </strong>
-    <span><%= campaign.name %></span>
-  </div>
-
-  <div>
-    <%= form.label :type, style: "display: block" %>
-    <%= form.number_field :type %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+              
+  <%= form.label :spreadsheet, "Finance Report" %>
+  <%= form.file_field :spreadsheet, style: "display: block", accept: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" %>
+  <%= form.submit "Submit" %>
 <% end %>
