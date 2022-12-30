@@ -1,9 +1,18 @@
-<h1>New campaign report</h1>
+<%= render "shared/small_topbar" %>
 
-<%= render "form", campaign_report: @campaign_report %>
+<div class="new-campaign-form">
+  <div class="px-4 py-3">
+    <p class="h3"><strong>Submit Campaign Finance Reports</strong></p>
+    <p>Follow the steps below to submit your campaign finance forms.</p>
+        
 
-<br>
+    <h5><strong>Submit Completed Campaign Finance Forms</strong></h5>
+    <%= render "form", campaign_report: @campaign_report %>
 
+    <br>  
+
+    <div>
+      <%= link_to "Skip (to all reports)", campaign_campaign_reports_path %>
+    </div>
+  </div>
 <div>
-  <%= link_to "Back to campaign reports", campaign_campaign_reports_path %>
-</div>

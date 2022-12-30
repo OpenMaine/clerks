@@ -251,6 +251,15 @@ td>a:not(.campaign-report-link) {
     height: 100vh;
 }
 
+.file-upload-button {
+    padding: 6px 12px !important;
+    font-size: 1rem !important;
+}
+
+.form-control.file-upload-button {
+    width: auto;
+}
+
 .form-group-campaign {
     margin-bottom: 15px;
 }
