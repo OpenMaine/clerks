@@ -158,6 +158,14 @@ class CampaignReportsController < ApplicationController
     end
   end
 
+  def download_campaign_xlsx
+    send_file "#{Rails.root}/app/assets/files/CampaignReport.xlsx", type: "application/xlsx", x_sendfile: true
+  end
+
+  def download_campaign_csv
+    send_file "#{Rails.root}/app/assets/files/CampaignReport.csv", type: "application/csv", x_sendfile: true
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_campaign_report

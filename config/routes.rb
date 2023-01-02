@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   end
   resources :elections
 
+  get 'download_campaign_xlsx', to: "campaign_reports#download_campaign_xlsx"
+  get 'download_campaign_csv', to: "campaign_reports#download_campaign_csv"
+
   # Defines the root path route ("/")
   root "campaigns#index"
 end
