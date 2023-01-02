@@ -68,7 +68,7 @@ class CampaignReportsController < ApplicationController
     # A1's are essentially A's but with a description (for in kind goods)
     ss.sheet(2).parse().each do |row|
       a1 = report.campaign_schedule_a1s.build
-      a1.date = Chronic.parse(row[0])
+      a1.date = Chronic.parse(row["Date Received"])
       a1.name = row[1]
       a1.address = row[2]
       a1.city = row[3]
@@ -156,6 +156,14 @@ class CampaignReportsController < ApplicationController
       format.html { redirect_to campaign, notice: "Campaign report was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def download_campaign_xlsx
+    send_file "#{Rails.root}/app/assets/files/CampaignReport.xlsx", type: "application/xlsx", x_sendfile: true
+  end
+
+  def download_campaign_csv
+    send_file "#{Rails.root}/app/assets/files/CampaignReport.csv", type: "application/csv", x_sendfile: true
   end
 
   private

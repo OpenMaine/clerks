@@ -17,7 +17,9 @@ Rails.application.routes.draw do
     end
   end
   resources :elections
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+  get 'download_campaign_xlsx', to: "campaign_reports#download_campaign_xlsx"
+  get 'download_campaign_csv', to: "campaign_reports#download_campaign_csv"
 
   # Defines the root path route ("/")
   root "campaigns#index"

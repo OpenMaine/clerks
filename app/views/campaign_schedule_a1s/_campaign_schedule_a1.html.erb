@@ -1,5 +1,5 @@
 <tr id="<%= dom_id campaign_schedule_a1 %>">
-  <td scope="row"><%= campaign_schedule_a1.date %></td>
+  <td scope="row"><%= campaign_schedule_a1.date.strftime("%m-%d-%Y") %></td>
 
   <td class="campaign-table-data"><%= campaign_schedule_a1.name %>
   <% if campaign_schedule_a1.address %>

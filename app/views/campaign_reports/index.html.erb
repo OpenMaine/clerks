@@ -62,21 +62,11 @@
                   <td class="campaign-table-data">02-01-2022</td>
                   <td class="campaign-table-data">02-01-2022</td>
                   <td class="campaign-table-data">Filed</td>
-                  <td class="campaign-table-data"><%= report.created_at.strftime("%Y-%m-%d") %></td>
+                  <td class="campaign-table-data"><%= report.created_at.strftime("%m-%d-%Y") %></td>
                 </tr>
               <% end %>
             </tbody>
           </table>
-
-          <div class="p-4 border border-danger">
-              <p>Upload new campaign finance report</p>
-              <%= form_with url: campaign_campaign_reports_path(@campaign) do |form| %>
-                <%= form.label :spreadsheet, "Finance Report" %>
-                <%= form.file_field :spreadsheet, style: "display: block", accept: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" %>
-                <%= form.submit "Submit" %>
-              <% end %>
-
-          </div>
         </div>
 
 <%# commented for demo purposes %>

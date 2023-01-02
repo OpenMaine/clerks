@@ -1,9 +1,46 @@
-<h1>New campaign report</h1>
+<%= render "shared/small_topbar" %>
 
-<%= render "form", campaign_report: @campaign_report %>
+<div class="new-campaign-form">
 
-<br>
+  <div class="px-4 py-3">
+    <p class="h3"><strong>Submit Campaign Finance Reports</strong></p>
+    <p>Follow the steps below to submit your campaign finance forms.</p>
+        
+    <h5  class="template-container"><strong>Download Campaign Finance Form Template</strong></h5>
 
+    <div class="container">
+      <div class="template-box">
+        <div class="form-label">Candidate Forms</div>
+
+        <%= link_to download_campaign_xlsx_path, target: "_blank", class: "template text-decoration-none" do %>
+            <%= image_tag "Xls.svg", style: 'height:65%;width:auto;' %>
+        <% end %>
+
+        <%= link_to download_campaign_csv_path, target: "_blank", class: "template text-decoration-none" do %>
+            <%= image_tag "Csv.svg", style: 'height:65%;width:auto;' %>
+        <% end %>
+      </div>
+
+      <div class="template-box">
+        <div class="form-label">Committee Forms</div>
+
+        <%= link_to download_campaign_xlsx_path, target: "_blank", class: "template text-decoration-none" do %>
+            <%= image_tag "Xls.svg", style: 'height:65%;width:auto;' %>
+        <% end %>
+
+        <%= link_to download_campaign_csv_path, target: "_blank", class: "template text-decoration-none" do %>
+            <%= image_tag "Csv.svg", style: 'height:65%;width:auto;' %>
+        <% end %>
+      </div>
+    </div>
+
+    <h5><strong>Submit Completed Campaign Finance Forms</strong></h5>
+    <%= render "form", campaign_report: @campaign_report %>
+
+    <br>  
+
+    <div>
+      <%= link_to "Skip (to all reports)", campaign_campaign_reports_path %>
+    </div>
+  </div>
 <div>
-  <%= link_to "Back to campaign reports", @campaign %>
-</div>

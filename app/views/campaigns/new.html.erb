@@ -1,9 +1,16 @@
-<h1>New campaign</h1>
+<%= render "shared/small_topbar" %>
 
-<%= render "form", campaign: @campaign %>
+<div class="new-campaign-form">
+  <div class="px-4 py-3">
+    <p class="h3"><strong>Registration Form</strong></p>
 
-<br>
+    <%= render "form", campaign: @campaign %>
 
-<div>
-  <%= link_to "Back to campaigns", campaigns_path %>
+
+    <br>
+
+    <div class="">
+      <%= link_to "Back to campaigns", campaigns_path %>
+    </div>
+  </div>
 </div>

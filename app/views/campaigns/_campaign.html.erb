@@ -54,9 +54,9 @@
                 </div>
               </div>
               <div class="financial-totals-content">
-                <h3>In-Kind Contributions</h3>
+                <h3>Cash-on-Hand</h3>
                 <div class="financial-totals-variable">
-                  <%= campaign.in_kind_contributions_all if !campaign.campaign_reports[-1].blank? %>
+                  <%= campaign.most_recent_cash_balance if !campaign.campaign_reports[-1].blank? %>
                   <%= "NA" if campaign.campaign_reports[-1].blank? %>
                 </div>
               </div>
@@ -71,13 +71,6 @@
                 <h3>Loans</h3>
                 <div class="financial-totals-variable">
                   <%= campaign.loan_balance_all if !campaign.campaign_reports[-1].blank? %>
-                  <%= "NA" if campaign.campaign_reports[-1].blank? %>
-                </div>
-              </div>
-              <div class="financial-totals-content">
-                <h3>Cash-on-Hand</h3>
-                <div class="financial-totals-variable">
-                  <%= campaign.most_recent_cash_balance if !campaign.campaign_reports[-1].blank? %>
                   <%= "NA" if campaign.campaign_reports[-1].blank? %>
                 </div>
               </div>

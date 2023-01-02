@@ -183,6 +183,99 @@ td>a:not(.campaign-report-link) {
     }
 }
 
+.form-group-campaign > label {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.form-group-campaign > select {
+    --#{$prefix}form-select-bg-img: #{escape-svg($form-select-indicator)};
+
+    display: block;
+    width: 100%;
+    padding: $form-select-padding-y $form-select-indicator-padding $form-select-padding-y $form-select-padding-x;
+    -moz-padding-start: subtract($form-select-padding-x, 3px); // See https://github.com/twbs/bootstrap/issues/32636
+    font-family: $form-select-font-family;
+    @include font-size($form-select-font-size);
+    font-weight: $form-select-font-weight;
+    line-height: $form-select-line-height;
+    color: $form-select-color;
+    background-color: $form-select-bg;
+    background-image: var(--#{$prefix}form-select-bg-img), var(--#{$prefix}form-select-bg-icon, none);
+    background-repeat: no-repeat;
+    background-position: $form-select-bg-position;
+    background-size: $form-select-bg-size;
+    border: $form-select-border-width solid $form-select-border-color;
+    @include border-radius($form-select-border-radius, 0);
+    @include box-shadow($form-select-box-shadow);
+    @include transition($form-select-transition);
+    appearance: none;
+  
+    &:focus {
+      border-color: $form-select-focus-border-color;
+      outline: 0;
+      @if $enable-shadows {
+        @include box-shadow($form-select-box-shadow, $form-select-focus-box-shadow);
+      } @else {
+        // Avoid using mixin so we can pass custom focus shadow properly
+        box-shadow: $form-select-focus-box-shadow;
+      }
+    }
+  
+    &[multiple],
+    &[size]:not([size="1"]) {
+      padding-right: $form-select-padding-x;
+      background-image: none;
+    }
+  
+    &:disabled {
+      color: $form-select-disabled-color;
+      background-color: $form-select-disabled-bg;
+      border-color: $form-select-disabled-border-color;
+    }
+  
+    // Remove outline from select box in FF
+    &:-moz-focusring {
+      color: transparent;
+      text-shadow: 0 0 0 $form-select-color;
+    }
+}
+
+.navbar-custom {
+    background-color: #FFFFFF;
+    padding: 15px 15px 15px 20px;
+}
+
+.new-campaign-form {
+    background-color: rgba(216, 216, 216, 0.3);
+    height: 100vh;
+}
+
+.template > img {
+    padding: 10px 15px 30px 15px;
+}
+
+.template-box {
+    padding-right: 15px;
+}
+
+.template-container {
+    padding-top: 20px;
+}
+
+.file-upload-button {
+    padding: 6px 12px !important;
+    font-size: 1rem !important;
+}
+
+.form-control.file-upload-button {
+    width: auto;
+}
+
+.form-group-campaign {
+    margin-bottom: 15px;
+}
+
 .campaign-table-data {
     font-size: 20px;
     padding: 20px 15px 20px 15px !important;

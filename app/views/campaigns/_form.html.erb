@@ -11,42 +11,42 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="form-group-campaign col-md-6">
     <%= form.label :election_id, style: "display: block" %>
     <%= form.collection_select :election_id, Election.order(:title), :id, :title %>
   </div>
 
-  <div>
+  <div class="form-group-campaign col-md-6">
     <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :street, style: "display: block" %>
-    <%= form.text_field :street %>
+  <div  class="form-group-campaign col-md-6">
+    <%= form.label "Address", style: "display: block" %>
+    <%= form.text_field :street, class: "form-control" %>
   </div>
 
-  <div>
+  <div  class="form-group-campaign col-md-6">
     <%= form.label :city, style: "display: block" %>
-    <%= form.text_field :city %>
+    <%= form.text_field :city, class: "form-control" %>
   </div>
 
-  <div>
+  <div  class="form-group-campaign col-md-6">
     <%= form.label :telephone, style: "display: block" %>
-    <%= form.text_field :telephone %>
+    <%= form.text_field :telephone, class: "form-control" %>
   </div>
 
-  <div>
+  <div  class="form-group-campaign col-md-6">
     <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, class: "form-control" %>
   </div>
 
-  <div>
+  <div  class="form-group-campaign col-md-6">
     <%= form.label :office, style: "display: block" %>
     <%= form.select :office, Campaign.offices.map { |val| [val[0], val[0]] } %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div  class="form-group-campaign col-md-6">
+    <%= form.submit 'Next', :class => "btn btn-primary btn-custom-color col-md-4" %>
   </div>
 <% end %>
