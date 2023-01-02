@@ -259,8 +259,12 @@ td>a:not(.campaign-report-link) {
     padding-right: 15px;
 }
 
-.template-container {
+.template-heading {
     padding-top: 20px;
+}
+
+.template-container {
+    display: inline-flex;
 }
 
 .file-upload-button {
