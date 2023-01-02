@@ -68,7 +68,7 @@ class CampaignReportsController < ApplicationController
     # A1's are essentially A's but with a description (for in kind goods)
     ss.sheet(2).parse().each do |row|
       a1 = report.campaign_schedule_a1s.build
-      a1.date = Chronic.parse(row[0])
+      a1.date = Chronic.parse(row["Date Received"])
       a1.name = row[1]
       a1.address = row[2]
       a1.city = row[3]
