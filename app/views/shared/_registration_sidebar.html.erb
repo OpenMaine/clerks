@@ -1,0 +1,18 @@
+<div class="sidebar">
+    <div class="sidebar-header">
+        <%= link_to "/" do %>
+            <%= show_svg('Logo.svg')%>
+        <% end %>
+    </div>
+
+    <ul class="list-unstyled-components">
+        <li class="sidebar-nav-item"><%= link_to "Registration", new_campaign_path %></li>
+        <li class="sidebar-nav-item"><%= link_to_if(!disable_schedules, "Schedule A", root_path) %></li>
+        <li class="sidebar-nav-item"><%= link_to_if(!disable_schedules, "Schedule A-1", root_path) %></li>
+        <li class="sidebar-nav-item"><%= link_to_if(!disable_schedules, "Schedule B", root_path) %></li>
+        <li class="sidebar-nav-item"><%= link_to_if(!disable_schedules, "Schedule C", root_path) %></li>
+        <li class="sidebar-nav-item"><%= link_to_if(!disable_schedules, "Schedule D", root_path) %></li>
+        <li class="sidebar-nav-item"><%= link_to_if(!disable_schedules, "Schedule F", root_path) %></li>
+        <li class="sidebar-nav-item"><%= link_to_if(!disable_schedules, "Review & Submit", root_path) %></li>
+    </ul>
+</div>

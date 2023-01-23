@@ -42,6 +42,11 @@
   </div>
 
   <div  class="form-group-campaign col-md-6">
+    <%= form.label :report_type, style: "display: block" %>
+    <%= form.select :report_type, CampaignReport.report_types.map { |val| [val[0], val[0]] } %>
+  </div>
+
+  <div  class="form-group-campaign col-md-6">
     <%= form.label :office, style: "display: block" %>
     <%= form.select :office, Campaign.offices.map { |val| [val[0], val[0]] } %>
   </div>

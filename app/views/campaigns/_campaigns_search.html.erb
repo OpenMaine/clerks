@@ -1,4 +1,4 @@
-<%= form_tag(campaigns_path, method: :get) do %>
+<%= form_tag(campaigns_path, method: :get) do |form| %>
   <div class="input-group input-group-home-custom">
       <span class="input-group-text search-icon" id="basic-addon1">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -12,17 +12,17 @@
     <div class="dropdown dropdown-searchbar">
       <div class="form-group-large text-left">
         <label for="exampleFormControlSelect1">Office</label>
-        <%= select_tag :office_filter, options_from_collection_for_select(Campaign.select('distinct office'), 'office', 'office'), {:class => 'btn btn-secondary dropdown-toggle filter-by-office', :prompt => 'Filter by Office'} %>
+        <%= select_tag :office_filter, options_from_collection_for_select(Campaign.select('distinct office'), 'office', 'office'), class: 'btn btn-secondary dropdown-toggle filter-by-office', prompt:'Filter by Office' %>
       </div>
     </div>
     <div class="dropdown dropdown-searchbar">
       <div class="form-group-large text-left">
         <label for="exampleFormControlSelect1">Election</label>
-        <%= select_tag :election_filter, options_from_collection_for_select(Election.all, 'id', 'title'), {:class => 'btn btn-secondary dropdown-toggle filter-by-election', :prompt => 'Filter by Election'} %>
+        <%= select_tag :election_filter, options_from_collection_for_select(Election.all, 'id', 'title'), class: 'btn btn-secondary dropdown-toggle filter-by-election', prompt: 'Filter by Election' %>
       </div>
     </div>
     <div class="input-group-append btn-search-container">
       <%= submit_tag "Search", class: "btn btn-primary btn-custom-color" %>
     </div>
   </div> 
-  <% end %>
+<% end %>

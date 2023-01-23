@@ -1,16 +1,18 @@
-<%= render "shared/small_topbar" %>
+<div class="wrapper">
+  <%= render "shared/registration_sidebar", disable_schedules: true %>
 
-<div class="new-campaign-form">
-  <div class="px-4 py-3">
-    <p class="h3"><strong>Registration Form</strong></p>
+  <div class="new-campaign-form">
+    <div class="px-4 py-3">
+      <p class="h3"><strong>Registration Form</strong></p>
 
-    <%= render "form", campaign: @campaign %>
+      <%= render "form", campaign: @campaign %>
 
 
-    <br>
+      <br>
 
-    <div class="">
-      <%= link_to "Back to campaigns", campaigns_path %>
+      <div class="">
+        <%= link_to "Back to campaigns", campaigns_path %>
+      </div>
     </div>
   </div>
 </div>

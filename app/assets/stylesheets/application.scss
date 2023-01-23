@@ -72,6 +72,7 @@ label {
 .sidebar-nav-item {
     font-size: 30px;
     padding: 0px 0px 15px 10px;
+    color: #9B9B9B; 
 
     &>a {
         text-decoration: none;
@@ -101,8 +102,7 @@ label {
 
 .list-unstyled-components {
     list-style: none;
-    padding: 25px;
-    padding-left: 45px;
+    padding: 25px 15px 22px 45px;
 }
 
 a {
@@ -247,8 +247,8 @@ td>a:not(.campaign-report-link) {
 }
 
 .new-campaign-form {
-    background-color: rgba(216, 216, 216, 0.3);
     height: 100vh;
+    width: 100%;
 }
 
 .template > img {
